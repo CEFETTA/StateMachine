@@ -60,12 +60,12 @@ module StateMachine(clock, state, cdb, listen, newState, emit);
         2'b00: //Invalid
           begin
             case(cdb[21:16])
-              6'b100000: //CPU write
+              6'b100000: //CPU write miss
               begin
               emit = {6'b000000, 16'b0}; //emite write miis
               newState = 2'b10; //->modified
               end
-              6'b100001: //CPU read
+              6'b100001: //CPU read miss
               begin
               emit = {6'b000001, 16'b0}; //emite read miis
               newState = 2'b01; //->shared
