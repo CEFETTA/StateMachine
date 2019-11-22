@@ -201,7 +201,6 @@ set_location_assignment PIN_N9 -to HEX7[6]
 set_location_assignment PIN_N23 -to KEY[1]
 set_location_assignment PIN_P23 -to KEY[2]
 set_location_assignment PIN_W26 -to KEY[3]
-set_location_assignment PIN_AE23 -to LEDR[0]
 set_location_assignment PIN_AF23 -to LEDR[1]
 set_location_assignment PIN_AB21 -to LEDR[2]
 set_location_assignment PIN_AC22 -to LEDR[3]
@@ -226,7 +225,6 @@ set_location_assignment PIN_V18 -to LEDG[3]
 set_location_assignment PIN_U18 -to LEDG[4]
 set_location_assignment PIN_U17 -to LEDG[5]
 set_location_assignment PIN_AA20 -to LEDG[6]
-set_location_assignment PIN_Y18 -to LEDG[7]
 set_location_assignment PIN_Y12 -to LEDG[8]
 set_location_assignment PIN_D13 -to CLOCK_27
 set_location_assignment PIN_N2 -to CLOCK_50
@@ -486,4 +484,6 @@ set_location_assignment PIN_U4 -to request[19]
 set_location_assignment PIN_V1 -to request[20]
 set_location_assignment PIN_V2 -to request[21]
 set_location_assignment PIN_G26 -to clock
+set_location_assignment PIN_AE23 -to abortMem
+set_location_assignment PIN_Y18 -to dataWB
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

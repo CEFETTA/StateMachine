@@ -1,4 +1,4 @@
-module StateMachine(clock, state, cdb, listen, newState, emit);
+module StateMachine(clock, state, cdb, listen, newState, emit, dataWB, abortMem);
   input clock;
   
   input[1:0] state;
@@ -10,6 +10,10 @@ module StateMachine(clock, state, cdb, listen, newState, emit);
   input listen;
   //1=ouvindo 0=escrevendo
   
+  output reg dataWB;
+  
+  output reg abortMem;
+  
   output reg[1:0] newState;
   //00=I 01=S 10=M
   
@@ -18,7 +22,9 @@ module StateMachine(clock, state, cdb, listen, newState, emit);
   
   always @(posedge clock)
   begin
-  
+	dataWB = 0;
+	abortMem = 0;
+	
     if(listen==1)
     begin
       case(state)
@@ -44,12 +50,26 @@ module StateMachine(clock, state, cdb, listen, newState, emit);
              case(cdb[21:16])
               6'b000000: //write miss
                 begin
-                  newState = 2'b00;
+                  newState = 2'b00; //Invalid
+						dataWB = 1;
+						abortMem = 1;
                 end
               6'b000001: //read miss
                 begin
                   newState = 2'b01; //->shared
+						dataWB = 1;
+						abortMem = 1;
                 end
+					6'b100100: //Fetch Invalidate
+					begin 
+						newState = 2'b00; //->Invalid
+						dataWB = 1;
+					end
+					6'b100111: //Fetch
+					begin 
+						newState = 2'b01; //->Shared
+						dataWB = 1;
+					end
              endcase
            end
         endcase
@@ -99,11 +119,17 @@ module StateMachine(clock, state, cdb, listen, newState, emit);
         2'b10: //Modified
           begin
             case(cdb[21:16])
-              6'b100000: //CPU read miss
+              6'b100000: //CPU write miss
               begin
               emit = {6'b000000, 16'b0}; //place write miss
               newState = 2'b10; //->modified
+				  dataWB = 1;
               end
+				  6'b100001: //CPU read miss
+				  begin
+				  newState = 2'b01; //Shared
+				  dataWB = 1;
+				  end
               6'b100010: //CPU write hit
               begin
               newState = 2'b10; //->modified

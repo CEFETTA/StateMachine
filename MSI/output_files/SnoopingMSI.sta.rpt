@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for SnoopingMSI
-Tue Nov 19 15:24:15 2019
+Fri Nov 22 17:28:28 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -107,13 +107,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                   ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; 457.25 MHz ; 450.05 MHz      ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+------------+---------------------------------------------------------------+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 407.66 MHz ; 407.66 MHz      ; clock      ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -122,7 +122,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -1.187 ; -5.155        ;
+; clock ; -1.453 ; -7.587        ;
 +-------+--------+---------------+
 
 
@@ -152,7 +152,7 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; clock ; -1.222 ; -8.222                ;
+; clock ; -1.222 ; -10.222               ;
 +-------+--------+-----------------------+
 
 
@@ -161,23 +161,27 @@ No paths to report.
 +--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
-; -1.187 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.223      ;
-; -1.126 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; -0.016     ; 2.146      ;
-; -1.126 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; -0.016     ; 2.146      ;
-; -1.117 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.153      ;
-; -1.016 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.052      ;
-; -1.010 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.046      ;
-; -0.989 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.025      ;
-; -0.797 ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; -0.016     ; 1.817      ;
-; -0.797 ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; -0.016     ; 1.817      ;
-; -0.603 ; StateMachine:controlador|emit[16]    ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.639      ;
-; -0.599 ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.635      ;
-; -0.449 ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.485      ;
-; -0.413 ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.449      ;
-; -0.389 ; StateMachine:controlador|emit[18]    ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.425      ;
-; 0.071  ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 1.000        ; 0.000      ; 0.965      ;
-; 0.084  ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 1.000        ; 0.000      ; 0.952      ;
+; -1.453 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; -0.008     ; 2.481      ;
+; -1.327 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; -0.008     ; 2.355      ;
+; -1.264 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; -0.008     ; 2.292      ;
+; -1.180 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; -0.008     ; 2.208      ;
+; -1.159 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.195      ;
+; -1.135 ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 2.171      ;
+; -0.900 ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.001      ; 1.937      ;
+; -0.900 ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.001      ; 1.937      ;
+; -0.880 ; state[1]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 1.000        ; -0.008     ; 1.908      ;
+; -0.878 ; state[1]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 1.000        ; -0.008     ; 1.906      ;
+; -0.795 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.001      ; 1.832      ;
+; -0.795 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.001      ; 1.832      ;
+; -0.689 ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.725      ;
+; -0.496 ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.532      ;
+; -0.386 ; state[0]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 1.000        ; -0.008     ; 1.414      ;
+; -0.384 ; state[0]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 1.000        ; -0.008     ; 1.412      ;
+; -0.283 ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 1.000        ; 0.008      ; 1.327      ;
+; -0.277 ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 1.000        ; 0.008      ; 1.321      ;
+; 0.379  ; StateMachine:controlador|emit[16]    ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
 ; 0.379  ; StateMachine:controlador|emit[17]    ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; StateMachine:controlador|emit[18]    ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
 +--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -186,23 +190,27 @@ No paths to report.
 +-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.391 ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; StateMachine:controlador|emit[16]    ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; StateMachine:controlador|emit[17]    ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; StateMachine:controlador|emit[18]    ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
-; 0.686 ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.952      ;
-; 0.699 ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.965      ;
-; 1.183 ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.449      ;
-; 1.255 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.521      ;
-; 1.369 ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.635      ;
-; 1.411 ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; -0.016     ; 1.661      ;
-; 1.411 ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; -0.016     ; 1.661      ;
-; 1.462 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; -0.016     ; 1.712      ;
-; 1.462 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; -0.016     ; 1.712      ;
-; 1.603 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.869      ;
-; 1.620 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.886      ;
-; 1.663 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.929      ;
-; 1.762 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 2.028      ;
+; 0.965 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; 0.001      ; 1.232      ;
+; 1.047 ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 0.000        ; 0.008      ; 1.321      ;
+; 1.053 ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 0.000        ; 0.008      ; 1.327      ;
+; 1.154 ; state[0]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 0.000        ; -0.008     ; 1.412      ;
+; 1.156 ; state[0]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 0.000        ; -0.008     ; 1.414      ;
+; 1.219 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; -0.008     ; 1.477      ;
+; 1.266 ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.532      ;
+; 1.266 ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; 0.001      ; 1.533      ;
+; 1.409 ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.675      ;
+; 1.456 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; 0.001      ; 1.723      ;
+; 1.459 ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.725      ;
+; 1.619 ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; 0.001      ; 1.886      ;
+; 1.638 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; -0.008     ; 1.896      ;
+; 1.648 ; state[1]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 0.000        ; -0.008     ; 1.906      ;
+; 1.650 ; state[1]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 0.000        ; -0.008     ; 1.908      ;
+; 1.704 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; -0.008     ; 1.962      ;
+; 1.844 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; -0.008     ; 2.102      ;
 +-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -212,6 +220,10 @@ No paths to report.
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
 ; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; clock ; Rise       ; clock                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|abortMem    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; StateMachine:controlador|abortMem    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|dataWB      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; StateMachine:controlador|dataWB      ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|emit[16]    ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; StateMachine:controlador|emit[16]    ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|emit[17]    ;
@@ -228,6 +240,10 @@ No paths to report.
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; state[1]                             ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|abortMem|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; controlador|abortMem|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|dataWB|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; controlador|dataWB|clk               ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|emit[16]|clk             ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; controlador|emit[16]|clk             ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|emit[17]|clk             ;
@@ -250,14 +266,14 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; listen       ; clock      ; 0.414  ; 0.414  ; Rise       ; clock           ;
-; request[*]   ; clock      ; 4.306  ; 4.306  ; Rise       ; clock           ;
-;  request[16] ; clock      ; -0.569 ; -0.569 ; Rise       ; clock           ;
-;  request[17] ; clock      ; 3.995  ; 3.995  ; Rise       ; clock           ;
-;  request[18] ; clock      ; 4.037  ; 4.037  ; Rise       ; clock           ;
-;  request[19] ; clock      ; 4.306  ; 4.306  ; Rise       ; clock           ;
-;  request[20] ; clock      ; 4.247  ; 4.247  ; Rise       ; clock           ;
-;  request[21] ; clock      ; 4.172  ; 4.172  ; Rise       ; clock           ;
+; listen       ; clock      ; 0.538  ; 0.538  ; Rise       ; clock           ;
+; request[*]   ; clock      ; 4.581  ; 4.581  ; Rise       ; clock           ;
+;  request[16] ; clock      ; -0.431 ; -0.431 ; Rise       ; clock           ;
+;  request[17] ; clock      ; 4.085  ; 4.085  ; Rise       ; clock           ;
+;  request[18] ; clock      ; 4.517  ; 4.517  ; Rise       ; clock           ;
+;  request[19] ; clock      ; 4.581  ; 4.581  ; Rise       ; clock           ;
+;  request[20] ; clock      ; 4.500  ; 4.500  ; Rise       ; clock           ;
+;  request[21] ; clock      ; 4.273  ; 4.273  ; Rise       ; clock           ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -266,14 +282,14 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; listen       ; clock      ; 0.793  ; 0.793  ; Rise       ; clock           ;
-; request[*]   ; clock      ; 2.464  ; 2.464  ; Rise       ; clock           ;
-;  request[16] ; clock      ; 2.464  ; 2.464  ; Rise       ; clock           ;
-;  request[17] ; clock      ; -1.882 ; -1.882 ; Rise       ; clock           ;
-;  request[18] ; clock      ; -2.191 ; -2.191 ; Rise       ; clock           ;
-;  request[19] ; clock      ; -2.460 ; -2.460 ; Rise       ; clock           ;
-;  request[20] ; clock      ; -2.401 ; -2.401 ; Rise       ; clock           ;
-;  request[21] ; clock      ; -2.326 ; -2.326 ; Rise       ; clock           ;
+; listen       ; clock      ; 0.586  ; 0.586  ; Rise       ; clock           ;
+; request[*]   ; clock      ; 1.985  ; 1.985  ; Rise       ; clock           ;
+;  request[16] ; clock      ; 1.985  ; 1.985  ; Rise       ; clock           ;
+;  request[17] ; clock      ; -2.257 ; -2.257 ; Rise       ; clock           ;
+;  request[18] ; clock      ; -1.969 ; -1.969 ; Rise       ; clock           ;
+;  request[19] ; clock      ; -2.619 ; -2.619 ; Rise       ; clock           ;
+;  request[20] ; clock      ; -2.435 ; -2.435 ; Rise       ; clock           ;
+;  request[21] ; clock      ; -2.339 ; -2.339 ; Rise       ; clock           ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -282,25 +298,27 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clock      ; 12.042 ; 12.042 ; Rise       ; clock           ;
-;  HEX0[0]  ; clock      ; 11.797 ; 11.797 ; Rise       ; clock           ;
-;  HEX0[2]  ; clock      ; 11.719 ; 11.719 ; Rise       ; clock           ;
-;  HEX0[3]  ; clock      ; 12.042 ; 12.042 ; Rise       ; clock           ;
-;  HEX0[4]  ; clock      ; 10.690 ; 10.690 ; Rise       ; clock           ;
-;  HEX0[5]  ; clock      ; 12.019 ; 12.019 ; Rise       ; clock           ;
-;  HEX0[6]  ; clock      ; 10.867 ; 10.867 ; Rise       ; clock           ;
-; HEX4[*]   ; clock      ; 9.319  ; 9.319  ; Rise       ; clock           ;
-;  HEX4[0]  ; clock      ; 9.319  ; 9.319  ; Rise       ; clock           ;
-;  HEX4[1]  ; clock      ; 9.316  ; 9.316  ; Rise       ; clock           ;
-;  HEX4[2]  ; clock      ; 9.166  ; 9.166  ; Rise       ; clock           ;
-;  HEX4[3]  ; clock      ; 9.030  ; 9.030  ; Rise       ; clock           ;
-;  HEX4[4]  ; clock      ; 9.013  ; 9.013  ; Rise       ; clock           ;
-;  HEX4[5]  ; clock      ; 9.052  ; 9.052  ; Rise       ; clock           ;
-;  HEX4[6]  ; clock      ; 9.131  ; 9.131  ; Rise       ; clock           ;
-; HEX5[*]   ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[4]  ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[5]  ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[6]  ; clock      ; 8.035  ; 8.035  ; Rise       ; clock           ;
+; HEX0[*]   ; clock      ; 11.482 ; 11.482 ; Rise       ; clock           ;
+;  HEX0[0]  ; clock      ; 10.848 ; 10.848 ; Rise       ; clock           ;
+;  HEX0[2]  ; clock      ; 11.316 ; 11.316 ; Rise       ; clock           ;
+;  HEX0[3]  ; clock      ; 10.617 ; 10.617 ; Rise       ; clock           ;
+;  HEX0[4]  ; clock      ; 10.437 ; 10.437 ; Rise       ; clock           ;
+;  HEX0[5]  ; clock      ; 11.482 ; 11.482 ; Rise       ; clock           ;
+;  HEX0[6]  ; clock      ; 10.577 ; 10.577 ; Rise       ; clock           ;
+; HEX4[*]   ; clock      ; 9.085  ; 9.085  ; Rise       ; clock           ;
+;  HEX4[0]  ; clock      ; 8.959  ; 8.959  ; Rise       ; clock           ;
+;  HEX4[1]  ; clock      ; 9.085  ; 9.085  ; Rise       ; clock           ;
+;  HEX4[2]  ; clock      ; 9.044  ; 9.044  ; Rise       ; clock           ;
+;  HEX4[3]  ; clock      ; 8.790  ; 8.790  ; Rise       ; clock           ;
+;  HEX4[4]  ; clock      ; 8.797  ; 8.797  ; Rise       ; clock           ;
+;  HEX4[5]  ; clock      ; 8.810  ; 8.810  ; Rise       ; clock           ;
+;  HEX4[6]  ; clock      ; 8.677  ; 8.677  ; Rise       ; clock           ;
+; HEX5[*]   ; clock      ; 8.026  ; 8.026  ; Rise       ; clock           ;
+;  HEX5[4]  ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[5]  ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[6]  ; clock      ; 8.026  ; 8.026  ; Rise       ; clock           ;
+; abortMem  ; clock      ; 12.479 ; 12.479 ; Rise       ; clock           ;
+; dataWB    ; clock      ; 9.756  ; 9.756  ; Rise       ; clock           ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -309,25 +327,27 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clock      ; 10.690 ; 10.690 ; Rise       ; clock           ;
-;  HEX0[0]  ; clock      ; 11.607 ; 11.607 ; Rise       ; clock           ;
-;  HEX0[2]  ; clock      ; 11.578 ; 11.578 ; Rise       ; clock           ;
-;  HEX0[3]  ; clock      ; 11.852 ; 11.852 ; Rise       ; clock           ;
-;  HEX0[4]  ; clock      ; 10.690 ; 10.690 ; Rise       ; clock           ;
-;  HEX0[5]  ; clock      ; 11.836 ; 11.836 ; Rise       ; clock           ;
-;  HEX0[6]  ; clock      ; 10.867 ; 10.867 ; Rise       ; clock           ;
-; HEX4[*]   ; clock      ; 8.897  ; 8.897  ; Rise       ; clock           ;
-;  HEX4[0]  ; clock      ; 9.186  ; 9.186  ; Rise       ; clock           ;
-;  HEX4[1]  ; clock      ; 9.180  ; 9.180  ; Rise       ; clock           ;
-;  HEX4[2]  ; clock      ; 9.061  ; 9.061  ; Rise       ; clock           ;
-;  HEX4[3]  ; clock      ; 8.897  ; 8.897  ; Rise       ; clock           ;
-;  HEX4[4]  ; clock      ; 8.903  ; 8.903  ; Rise       ; clock           ;
-;  HEX4[5]  ; clock      ; 8.919  ; 8.919  ; Rise       ; clock           ;
-;  HEX4[6]  ; clock      ; 8.940  ; 8.940  ; Rise       ; clock           ;
-; HEX5[*]   ; clock      ; 8.035  ; 8.035  ; Rise       ; clock           ;
-;  HEX5[4]  ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[5]  ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[6]  ; clock      ; 8.035  ; 8.035  ; Rise       ; clock           ;
+; HEX0[*]   ; clock      ; 10.437 ; 10.437 ; Rise       ; clock           ;
+;  HEX0[0]  ; clock      ; 10.709 ; 10.709 ; Rise       ; clock           ;
+;  HEX0[2]  ; clock      ; 10.822 ; 10.822 ; Rise       ; clock           ;
+;  HEX0[3]  ; clock      ; 10.478 ; 10.478 ; Rise       ; clock           ;
+;  HEX0[4]  ; clock      ; 10.437 ; 10.437 ; Rise       ; clock           ;
+;  HEX0[5]  ; clock      ; 11.428 ; 11.428 ; Rise       ; clock           ;
+;  HEX0[6]  ; clock      ; 10.577 ; 10.577 ; Rise       ; clock           ;
+; HEX4[*]   ; clock      ; 8.565  ; 8.565  ; Rise       ; clock           ;
+;  HEX4[0]  ; clock      ; 8.785  ; 8.785  ; Rise       ; clock           ;
+;  HEX4[1]  ; clock      ; 8.914  ; 8.914  ; Rise       ; clock           ;
+;  HEX4[2]  ; clock      ; 8.927  ; 8.927  ; Rise       ; clock           ;
+;  HEX4[3]  ; clock      ; 8.628  ; 8.628  ; Rise       ; clock           ;
+;  HEX4[4]  ; clock      ; 8.638  ; 8.638  ; Rise       ; clock           ;
+;  HEX4[5]  ; clock      ; 8.649  ; 8.649  ; Rise       ; clock           ;
+;  HEX4[6]  ; clock      ; 8.565  ; 8.565  ; Rise       ; clock           ;
+; HEX5[*]   ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[4]  ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[5]  ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[6]  ; clock      ; 8.026  ; 8.026  ; Rise       ; clock           ;
+; abortMem  ; clock      ; 12.479 ; 12.479 ; Rise       ; clock           ;
+; dataWB    ; clock      ; 9.756  ; 9.756  ; Rise       ; clock           ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -336,44 +356,44 @@ No paths to report.
 +-------------+-------------+--------+--------+--------+--------+
 ; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +-------------+-------------+--------+--------+--------+--------+
-; request[16] ; HEX6[0]     ; 5.058  ; 5.058  ; 5.058  ; 5.058  ;
-; request[16] ; HEX6[1]     ; 5.075  ; 5.075  ; 5.075  ; 5.075  ;
-; request[16] ; HEX6[2]     ;        ; 5.056  ; 5.056  ;        ;
-; request[16] ; HEX6[3]     ; 5.608  ; 5.608  ; 5.608  ; 5.608  ;
-; request[16] ; HEX6[4]     ; 5.618  ;        ;        ; 5.618  ;
-; request[16] ; HEX6[5]     ; 5.587  ;        ;        ; 5.587  ;
-; request[16] ; HEX6[6]     ; 5.584  ; 5.584  ; 5.584  ; 5.584  ;
-; request[17] ; HEX6[0]     ; 9.539  ; 9.539  ; 9.539  ; 9.539  ;
-; request[17] ; HEX6[1]     ; 9.592  ; 9.592  ; 9.592  ; 9.592  ;
-; request[17] ; HEX6[2]     ; 9.574  ;        ;        ; 9.574  ;
-; request[17] ; HEX6[3]     ; 10.126 ; 10.126 ; 10.126 ; 10.126 ;
-; request[17] ; HEX6[4]     ;        ; 10.138 ; 10.138 ;        ;
-; request[17] ; HEX6[5]     ; 10.090 ; 10.090 ; 10.090 ; 10.090 ;
-; request[17] ; HEX6[6]     ; 10.106 ; 10.106 ; 10.106 ; 10.106 ;
-; request[18] ; HEX6[0]     ; 9.501  ; 9.501  ; 9.501  ; 9.501  ;
-; request[18] ; HEX6[1]     ; 9.530  ;        ;        ; 9.530  ;
-; request[18] ; HEX6[2]     ; 9.483  ; 9.483  ; 9.483  ; 9.483  ;
-; request[18] ; HEX6[3]     ; 10.060 ; 10.060 ; 10.060 ; 10.060 ;
-; request[18] ; HEX6[4]     ; 10.071 ; 10.071 ; 10.071 ; 10.071 ;
-; request[18] ; HEX6[5]     ; 10.033 ; 10.033 ; 10.033 ; 10.033 ;
-; request[18] ; HEX6[6]     ; 10.042 ; 10.042 ; 10.042 ; 10.042 ;
-; request[19] ; HEX6[0]     ; 9.214  ; 9.214  ; 9.214  ; 9.214  ;
-; request[19] ; HEX6[1]     ; 9.235  ; 9.235  ; 9.235  ; 9.235  ;
-; request[19] ; HEX6[2]     ; 9.215  ; 9.215  ; 9.215  ; 9.215  ;
-; request[19] ; HEX6[3]     ; 9.768  ; 9.768  ; 9.768  ; 9.768  ;
-; request[19] ; HEX6[4]     ;        ; 9.776  ; 9.776  ;        ;
-; request[19] ; HEX6[5]     ; 9.743  ; 9.743  ; 9.743  ; 9.743  ;
-; request[19] ; HEX6[6]     ; 9.748  ; 9.748  ; 9.748  ; 9.748  ;
-; request[20] ; HEX7[0]     ; 9.563  ;        ;        ; 9.563  ;
-; request[20] ; HEX7[2]     ;        ; 9.970  ; 9.970  ;        ;
-; request[20] ; HEX7[3]     ; 9.533  ;        ;        ; 9.533  ;
-; request[20] ; HEX7[4]     ; 8.831  ;        ;        ; 8.831  ;
-; request[20] ; HEX7[5]     ; 10.019 ;        ;        ; 10.019 ;
-; request[21] ; HEX7[0]     ;        ; 9.428  ; 9.428  ;        ;
-; request[21] ; HEX7[2]     ; 9.885  ;        ;        ; 9.885  ;
-; request[21] ; HEX7[3]     ;        ; 9.398  ; 9.398  ;        ;
-; request[21] ; HEX7[5]     ; 9.938  ;        ;        ; 9.938  ;
-; request[21] ; HEX7[6]     ;        ; 9.146  ; 9.146  ;        ;
+; request[16] ; HEX6[0]     ; 4.953  ; 4.953  ; 4.953  ; 4.953  ;
+; request[16] ; HEX6[1]     ; 4.959  ; 4.959  ; 4.959  ; 4.959  ;
+; request[16] ; HEX6[2]     ;        ; 4.942  ; 4.942  ;        ;
+; request[16] ; HEX6[3]     ; 5.495  ; 5.495  ; 5.495  ; 5.495  ;
+; request[16] ; HEX6[4]     ; 5.500  ;        ;        ; 5.500  ;
+; request[16] ; HEX6[5]     ; 5.495  ;        ;        ; 5.495  ;
+; request[16] ; HEX6[6]     ; 5.479  ; 5.479  ; 5.479  ; 5.479  ;
+; request[17] ; HEX6[0]     ; 9.502  ; 9.502  ; 9.502  ; 9.502  ;
+; request[17] ; HEX6[1]     ; 9.541  ; 9.541  ; 9.541  ; 9.541  ;
+; request[17] ; HEX6[2]     ; 9.531  ;        ;        ; 9.531  ;
+; request[17] ; HEX6[3]     ; 10.069 ; 10.069 ; 10.069 ; 10.069 ;
+; request[17] ; HEX6[4]     ;        ; 10.051 ; 10.051 ;        ;
+; request[17] ; HEX6[5]     ; 10.072 ; 10.072 ; 10.072 ; 10.072 ;
+; request[17] ; HEX6[6]     ; 10.053 ; 10.053 ; 10.053 ; 10.053 ;
+; request[18] ; HEX6[0]     ; 9.570  ; 9.570  ; 9.570  ; 9.570  ;
+; request[18] ; HEX6[1]     ; 9.577  ;        ;        ; 9.577  ;
+; request[18] ; HEX6[2]     ; 9.568  ; 9.568  ; 9.568  ; 9.568  ;
+; request[18] ; HEX6[3]     ; 10.109 ; 10.109 ; 10.109 ; 10.109 ;
+; request[18] ; HEX6[4]     ; 10.114 ; 10.114 ; 10.114 ; 10.114 ;
+; request[18] ; HEX6[5]     ; 10.108 ; 10.108 ; 10.108 ; 10.108 ;
+; request[18] ; HEX6[6]     ; 10.092 ; 10.092 ; 10.092 ; 10.092 ;
+; request[19] ; HEX6[0]     ; 9.670  ; 9.670  ; 9.670  ; 9.670  ;
+; request[19] ; HEX6[1]     ; 9.706  ; 9.706  ; 9.706  ; 9.706  ;
+; request[19] ; HEX6[2]     ; 9.697  ; 9.697  ; 9.697  ; 9.697  ;
+; request[19] ; HEX6[3]     ; 10.241 ; 10.241 ; 10.241 ; 10.241 ;
+; request[19] ; HEX6[4]     ;        ; 10.210 ; 10.210 ;        ;
+; request[19] ; HEX6[5]     ; 10.209 ; 10.209 ; 10.209 ; 10.209 ;
+; request[19] ; HEX6[6]     ; 10.224 ; 10.224 ; 10.224 ; 10.224 ;
+; request[20] ; HEX7[0]     ; 9.582  ;        ;        ; 9.582  ;
+; request[20] ; HEX7[2]     ;        ; 9.564  ; 9.564  ;        ;
+; request[20] ; HEX7[3]     ; 9.552  ;        ;        ; 9.552  ;
+; request[20] ; HEX7[4]     ; 8.849  ;        ;        ; 8.849  ;
+; request[20] ; HEX7[5]     ; 9.719  ;        ;        ; 9.719  ;
+; request[21] ; HEX7[0]     ;        ; 9.455  ; 9.455  ;        ;
+; request[21] ; HEX7[2]     ; 9.437  ;        ;        ; 9.437  ;
+; request[21] ; HEX7[3]     ;        ; 9.425  ; 9.425  ;        ;
+; request[21] ; HEX7[5]     ; 9.624  ;        ;        ; 9.624  ;
+; request[21] ; HEX7[6]     ;        ; 9.166  ; 9.166  ;        ;
 +-------------+-------------+--------+--------+--------+--------+
 
 
@@ -382,44 +402,44 @@ No paths to report.
 +-------------+-------------+--------+--------+--------+--------+
 ; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +-------------+-------------+--------+--------+--------+--------+
-; request[16] ; HEX6[0]     ; 5.058  ; 5.058  ; 5.058  ; 5.058  ;
-; request[16] ; HEX6[1]     ; 5.075  ; 5.075  ; 5.075  ; 5.075  ;
-; request[16] ; HEX6[2]     ;        ; 5.056  ; 5.056  ;        ;
-; request[16] ; HEX6[3]     ; 5.608  ; 5.608  ; 5.608  ; 5.608  ;
-; request[16] ; HEX6[4]     ; 5.618  ;        ;        ; 5.618  ;
-; request[16] ; HEX6[5]     ; 5.587  ;        ;        ; 5.587  ;
-; request[16] ; HEX6[6]     ; 5.584  ; 5.584  ; 5.584  ; 5.584  ;
-; request[17] ; HEX6[0]     ; 9.539  ; 9.539  ; 9.539  ; 9.539  ;
-; request[17] ; HEX6[1]     ; 9.592  ; 9.592  ; 9.592  ; 9.592  ;
-; request[17] ; HEX6[2]     ; 9.574  ;        ;        ; 9.574  ;
-; request[17] ; HEX6[3]     ; 10.126 ; 10.126 ; 10.126 ; 10.126 ;
-; request[17] ; HEX6[4]     ;        ; 10.138 ; 10.138 ;        ;
-; request[17] ; HEX6[5]     ; 10.090 ; 10.090 ; 10.090 ; 10.090 ;
-; request[17] ; HEX6[6]     ; 10.106 ; 10.106 ; 10.106 ; 10.106 ;
-; request[18] ; HEX6[0]     ; 9.501  ; 9.501  ; 9.501  ; 9.501  ;
-; request[18] ; HEX6[1]     ; 9.530  ;        ;        ; 9.530  ;
-; request[18] ; HEX6[2]     ; 9.483  ; 9.483  ; 9.483  ; 9.483  ;
-; request[18] ; HEX6[3]     ; 10.060 ; 10.060 ; 10.060 ; 10.060 ;
-; request[18] ; HEX6[4]     ; 10.071 ; 10.071 ; 10.071 ; 10.071 ;
-; request[18] ; HEX6[5]     ; 10.033 ; 10.033 ; 10.033 ; 10.033 ;
-; request[18] ; HEX6[6]     ; 10.042 ; 10.042 ; 10.042 ; 10.042 ;
-; request[19] ; HEX6[0]     ; 9.214  ; 9.214  ; 9.214  ; 9.214  ;
-; request[19] ; HEX6[1]     ; 9.235  ; 9.235  ; 9.235  ; 9.235  ;
-; request[19] ; HEX6[2]     ; 9.215  ; 9.215  ; 9.215  ; 9.215  ;
-; request[19] ; HEX6[3]     ; 9.768  ; 9.768  ; 9.768  ; 9.768  ;
-; request[19] ; HEX6[4]     ;        ; 9.776  ; 9.776  ;        ;
-; request[19] ; HEX6[5]     ; 9.743  ; 9.743  ; 9.743  ; 9.743  ;
-; request[19] ; HEX6[6]     ; 9.748  ; 9.748  ; 9.748  ; 9.748  ;
-; request[20] ; HEX7[0]     ; 9.563  ;        ;        ; 9.563  ;
-; request[20] ; HEX7[2]     ;        ; 9.970  ; 9.970  ;        ;
-; request[20] ; HEX7[3]     ; 9.533  ;        ;        ; 9.533  ;
-; request[20] ; HEX7[4]     ; 8.831  ;        ;        ; 8.831  ;
-; request[20] ; HEX7[5]     ; 10.019 ;        ;        ; 10.019 ;
-; request[21] ; HEX7[0]     ;        ; 9.428  ; 9.428  ;        ;
-; request[21] ; HEX7[2]     ; 9.885  ;        ;        ; 9.885  ;
-; request[21] ; HEX7[3]     ;        ; 9.398  ; 9.398  ;        ;
-; request[21] ; HEX7[5]     ; 9.938  ;        ;        ; 9.938  ;
-; request[21] ; HEX7[6]     ;        ; 9.146  ; 9.146  ;        ;
+; request[16] ; HEX6[0]     ; 4.953  ; 4.953  ; 4.953  ; 4.953  ;
+; request[16] ; HEX6[1]     ; 4.959  ; 4.959  ; 4.959  ; 4.959  ;
+; request[16] ; HEX6[2]     ;        ; 4.942  ; 4.942  ;        ;
+; request[16] ; HEX6[3]     ; 5.495  ; 5.495  ; 5.495  ; 5.495  ;
+; request[16] ; HEX6[4]     ; 5.500  ;        ;        ; 5.500  ;
+; request[16] ; HEX6[5]     ; 5.495  ;        ;        ; 5.495  ;
+; request[16] ; HEX6[6]     ; 5.479  ; 5.479  ; 5.479  ; 5.479  ;
+; request[17] ; HEX6[0]     ; 9.502  ; 9.502  ; 9.502  ; 9.502  ;
+; request[17] ; HEX6[1]     ; 9.541  ; 9.541  ; 9.541  ; 9.541  ;
+; request[17] ; HEX6[2]     ; 9.531  ;        ;        ; 9.531  ;
+; request[17] ; HEX6[3]     ; 10.069 ; 10.069 ; 10.069 ; 10.069 ;
+; request[17] ; HEX6[4]     ;        ; 10.051 ; 10.051 ;        ;
+; request[17] ; HEX6[5]     ; 10.072 ; 10.072 ; 10.072 ; 10.072 ;
+; request[17] ; HEX6[6]     ; 10.053 ; 10.053 ; 10.053 ; 10.053 ;
+; request[18] ; HEX6[0]     ; 9.570  ; 9.570  ; 9.570  ; 9.570  ;
+; request[18] ; HEX6[1]     ; 9.577  ;        ;        ; 9.577  ;
+; request[18] ; HEX6[2]     ; 9.568  ; 9.568  ; 9.568  ; 9.568  ;
+; request[18] ; HEX6[3]     ; 10.109 ; 10.109 ; 10.109 ; 10.109 ;
+; request[18] ; HEX6[4]     ; 10.114 ; 10.114 ; 10.114 ; 10.114 ;
+; request[18] ; HEX6[5]     ; 10.108 ; 10.108 ; 10.108 ; 10.108 ;
+; request[18] ; HEX6[6]     ; 10.092 ; 10.092 ; 10.092 ; 10.092 ;
+; request[19] ; HEX6[0]     ; 9.670  ; 9.670  ; 9.670  ; 9.670  ;
+; request[19] ; HEX6[1]     ; 9.706  ; 9.706  ; 9.706  ; 9.706  ;
+; request[19] ; HEX6[2]     ; 9.697  ; 9.697  ; 9.697  ; 9.697  ;
+; request[19] ; HEX6[3]     ; 10.241 ; 10.241 ; 10.241 ; 10.241 ;
+; request[19] ; HEX6[4]     ;        ; 10.210 ; 10.210 ;        ;
+; request[19] ; HEX6[5]     ; 10.209 ; 10.209 ; 10.209 ; 10.209 ;
+; request[19] ; HEX6[6]     ; 10.224 ; 10.224 ; 10.224 ; 10.224 ;
+; request[20] ; HEX7[0]     ; 9.582  ;        ;        ; 9.582  ;
+; request[20] ; HEX7[2]     ;        ; 9.564  ; 9.564  ;        ;
+; request[20] ; HEX7[3]     ; 9.552  ;        ;        ; 9.552  ;
+; request[20] ; HEX7[4]     ; 8.849  ;        ;        ; 8.849  ;
+; request[20] ; HEX7[5]     ; 9.719  ;        ;        ; 9.719  ;
+; request[21] ; HEX7[0]     ;        ; 9.455  ; 9.455  ;        ;
+; request[21] ; HEX7[2]     ; 9.437  ;        ;        ; 9.437  ;
+; request[21] ; HEX7[3]     ;        ; 9.425  ; 9.425  ;        ;
+; request[21] ; HEX7[5]     ; 9.624  ;        ;        ; 9.624  ;
+; request[21] ; HEX7[6]     ;        ; 9.166  ; 9.166  ;        ;
 +-------------+-------------+--------+--------+--------+--------+
 
 
@@ -428,7 +448,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -0.048 ; -0.096        ;
+; clock ; -0.123 ; -0.175        ;
 +-------+--------+---------------+
 
 
@@ -458,7 +478,7 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; clock ; -1.222 ; -8.222                ;
+; clock ; -1.222 ; -10.222               ;
 +-------+--------+-----------------------+
 
 
@@ -467,23 +487,27 @@ No paths to report.
 +--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
-; -0.048 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; -0.008     ; 1.072      ;
-; -0.048 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; -0.008     ; 1.072      ;
-; 0.038  ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.994      ;
-; 0.068  ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.964      ;
-; 0.097  ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.935      ;
-; 0.113  ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.919      ;
-; 0.118  ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.914      ;
-; 0.134  ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; -0.008     ; 0.890      ;
-; 0.134  ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; -0.008     ; 0.890      ;
-; 0.272  ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.760      ;
-; 0.277  ; StateMachine:controlador|emit[16]    ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.755      ;
-; 0.330  ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.702      ;
-; 0.342  ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.690      ;
-; 0.359  ; StateMachine:controlador|emit[18]    ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.673      ;
-; 0.529  ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 1.000        ; 0.000      ; 0.503      ;
-; 0.540  ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 1.000        ; 0.000      ; 0.492      ;
+; -0.123 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; -0.005     ; 1.150      ;
+; -0.052 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; -0.005     ; 1.079      ;
+; -0.010 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; -0.005     ; 1.037      ;
+; -0.005 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.037      ;
+; -0.001 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 1.000        ; -0.005     ; 1.028      ;
+; 0.048  ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.984      ;
+; 0.059  ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.973      ;
+; 0.059  ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.973      ;
+; 0.095  ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.937      ;
+; 0.095  ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.937      ;
+; 0.146  ; state[1]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 1.000        ; -0.005     ; 0.881      ;
+; 0.148  ; state[1]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 1.000        ; -0.005     ; 0.879      ;
+; 0.238  ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.794      ;
+; 0.320  ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.712      ;
+; 0.363  ; state[0]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 1.000        ; -0.005     ; 0.664      ;
+; 0.365  ; state[0]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 1.000        ; -0.005     ; 0.662      ;
+; 0.385  ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 1.000        ; 0.005      ; 0.652      ;
+; 0.387  ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 1.000        ; 0.005      ; 0.650      ;
+; 0.665  ; StateMachine:controlador|emit[16]    ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
 ; 0.665  ; StateMachine:controlador|emit[17]    ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; StateMachine:controlador|emit[18]    ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
 +--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -492,23 +516,27 @@ No paths to report.
 +-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.215 ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; StateMachine:controlador|emit[16]    ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; StateMachine:controlador|emit[17]    ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; StateMachine:controlador|emit[18]    ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
-; 0.340 ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.492      ;
-; 0.351 ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.503      ;
-; 0.550 ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.702      ;
-; 0.569 ; StateMachine:controlador|newState[0] ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.721      ;
-; 0.608 ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.760      ;
-; 0.639 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; -0.008     ; 0.783      ;
-; 0.640 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; -0.008     ; 0.784      ;
-; 0.691 ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; -0.008     ; 0.835      ;
-; 0.691 ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; -0.008     ; 0.835      ;
-; 0.718 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.870      ;
-; 0.724 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.876      ;
-; 0.742 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.894      ;
-; 0.781 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.933      ;
+; 0.458 ; state[0]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.610      ;
+; 0.493 ; StateMachine:controlador|newState[1] ; state[1]                             ; clock        ; clock       ; 0.000        ; 0.005      ; 0.650      ;
+; 0.495 ; StateMachine:controlador|newState[0] ; state[0]                             ; clock        ; clock       ; 0.000        ; 0.005      ; 0.652      ;
+; 0.515 ; state[0]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 0.000        ; -0.005     ; 0.662      ;
+; 0.517 ; state[0]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 0.000        ; -0.005     ; 0.664      ;
+; 0.560 ; state[1]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.712      ;
+; 0.560 ; state[1]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.712      ;
+; 0.579 ; state[1]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; -0.005     ; 0.726      ;
+; 0.624 ; StateMachine:controlador|newState[1] ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.776      ;
+; 0.642 ; state[0]                             ; StateMachine:controlador|emit[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.794      ;
+; 0.642 ; state[0]                             ; StateMachine:controlador|emit[18]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.794      ;
+; 0.715 ; state[1]                             ; StateMachine:controlador|emit[16]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.867      ;
+; 0.732 ; state[1]                             ; StateMachine:controlador|dataWB      ; clock        ; clock       ; 0.000        ; -0.005     ; 0.879      ;
+; 0.734 ; state[1]                             ; StateMachine:controlador|abortMem    ; clock        ; clock       ; 0.000        ; -0.005     ; 0.881      ;
+; 0.746 ; state[1]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; -0.005     ; 0.893      ;
+; 0.751 ; state[0]                             ; StateMachine:controlador|newState[0] ; clock        ; clock       ; 0.000        ; -0.005     ; 0.898      ;
+; 0.804 ; state[0]                             ; StateMachine:controlador|newState[1] ; clock        ; clock       ; 0.000        ; -0.005     ; 0.951      ;
 +-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -518,6 +546,10 @@ No paths to report.
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
 ; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; clock ; Rise       ; clock                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|abortMem    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; StateMachine:controlador|abortMem    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|dataWB      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; StateMachine:controlador|dataWB      ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|emit[16]    ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; StateMachine:controlador|emit[16]    ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; StateMachine:controlador|emit[17]    ;
@@ -534,6 +566,10 @@ No paths to report.
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; state[1]                             ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|abortMem|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; controlador|abortMem|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|dataWB|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; controlador|dataWB|clk               ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|emit[16]|clk             ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; controlador|emit[16]|clk             ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; controlador|emit[17]|clk             ;
@@ -556,14 +592,14 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; listen       ; clock      ; 0.087  ; 0.087  ; Rise       ; clock           ;
-; request[*]   ; clock      ; 2.292  ; 2.292  ; Rise       ; clock           ;
-;  request[16] ; clock      ; -0.589 ; -0.589 ; Rise       ; clock           ;
-;  request[17] ; clock      ; 2.124  ; 2.124  ; Rise       ; clock           ;
-;  request[18] ; clock      ; 2.156  ; 2.156  ; Rise       ; clock           ;
-;  request[19] ; clock      ; 2.292  ; 2.292  ; Rise       ; clock           ;
-;  request[20] ; clock      ; 2.272  ; 2.272  ; Rise       ; clock           ;
-;  request[21] ; clock      ; 2.244  ; 2.244  ; Rise       ; clock           ;
+; listen       ; clock      ; 0.140  ; 0.140  ; Rise       ; clock           ;
+; request[*]   ; clock      ; 2.418  ; 2.418  ; Rise       ; clock           ;
+;  request[16] ; clock      ; -0.519 ; -0.519 ; Rise       ; clock           ;
+;  request[17] ; clock      ; 2.182  ; 2.182  ; Rise       ; clock           ;
+;  request[18] ; clock      ; 2.406  ; 2.406  ; Rise       ; clock           ;
+;  request[19] ; clock      ; 2.411  ; 2.411  ; Rise       ; clock           ;
+;  request[20] ; clock      ; 2.418  ; 2.418  ; Rise       ; clock           ;
+;  request[21] ; clock      ; 2.302  ; 2.302  ; Rise       ; clock           ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -572,14 +608,14 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; listen       ; clock      ; 0.564  ; 0.564  ; Rise       ; clock           ;
-; request[*]   ; clock      ; 1.392  ; 1.392  ; Rise       ; clock           ;
-;  request[16] ; clock      ; 1.392  ; 1.392  ; Rise       ; clock           ;
-;  request[17] ; clock      ; -1.224 ; -1.224 ; Rise       ; clock           ;
-;  request[18] ; clock      ; -1.343 ; -1.343 ; Rise       ; clock           ;
-;  request[19] ; clock      ; -1.479 ; -1.479 ; Rise       ; clock           ;
-;  request[20] ; clock      ; -1.459 ; -1.459 ; Rise       ; clock           ;
-;  request[21] ; clock      ; -1.431 ; -1.431 ; Rise       ; clock           ;
+; listen       ; clock      ; 0.440  ; 0.440  ; Rise       ; clock           ;
+; request[*]   ; clock      ; 1.190  ; 1.190  ; Rise       ; clock           ;
+;  request[16] ; clock      ; 1.190  ; 1.190  ; Rise       ; clock           ;
+;  request[17] ; clock      ; -1.372 ; -1.372 ; Rise       ; clock           ;
+;  request[18] ; clock      ; -1.280 ; -1.280 ; Rise       ; clock           ;
+;  request[19] ; clock      ; -1.523 ; -1.523 ; Rise       ; clock           ;
+;  request[20] ; clock      ; -1.472 ; -1.472 ; Rise       ; clock           ;
+;  request[21] ; clock      ; -1.430 ; -1.430 ; Rise       ; clock           ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -588,25 +624,27 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; clock      ; 6.296 ; 6.296 ; Rise       ; clock           ;
-;  HEX0[0]  ; clock      ; 6.181 ; 6.181 ; Rise       ; clock           ;
-;  HEX0[2]  ; clock      ; 6.152 ; 6.152 ; Rise       ; clock           ;
-;  HEX0[3]  ; clock      ; 6.296 ; 6.296 ; Rise       ; clock           ;
-;  HEX0[4]  ; clock      ; 5.702 ; 5.702 ; Rise       ; clock           ;
-;  HEX0[5]  ; clock      ; 6.274 ; 6.274 ; Rise       ; clock           ;
-;  HEX0[6]  ; clock      ; 5.770 ; 5.770 ; Rise       ; clock           ;
-; HEX4[*]   ; clock      ; 4.854 ; 4.854 ; Rise       ; clock           ;
-;  HEX4[0]  ; clock      ; 4.854 ; 4.854 ; Rise       ; clock           ;
-;  HEX4[1]  ; clock      ; 4.852 ; 4.852 ; Rise       ; clock           ;
-;  HEX4[2]  ; clock      ; 4.792 ; 4.792 ; Rise       ; clock           ;
-;  HEX4[3]  ; clock      ; 4.714 ; 4.714 ; Rise       ; clock           ;
-;  HEX4[4]  ; clock      ; 4.732 ; 4.732 ; Rise       ; clock           ;
-;  HEX4[5]  ; clock      ; 4.740 ; 4.740 ; Rise       ; clock           ;
-;  HEX4[6]  ; clock      ; 4.780 ; 4.780 ; Rise       ; clock           ;
-; HEX5[*]   ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[4]  ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[5]  ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[6]  ; clock      ; 4.286 ; 4.286 ; Rise       ; clock           ;
+; HEX0[*]   ; clock      ; 6.025 ; 6.025 ; Rise       ; clock           ;
+;  HEX0[0]  ; clock      ; 5.724 ; 5.724 ; Rise       ; clock           ;
+;  HEX0[2]  ; clock      ; 5.828 ; 5.828 ; Rise       ; clock           ;
+;  HEX0[3]  ; clock      ; 5.618 ; 5.618 ; Rise       ; clock           ;
+;  HEX0[4]  ; clock      ; 5.590 ; 5.590 ; Rise       ; clock           ;
+;  HEX0[5]  ; clock      ; 6.025 ; 6.025 ; Rise       ; clock           ;
+;  HEX0[6]  ; clock      ; 5.643 ; 5.643 ; Rise       ; clock           ;
+; HEX4[*]   ; clock      ; 4.747 ; 4.747 ; Rise       ; clock           ;
+;  HEX4[0]  ; clock      ; 4.686 ; 4.686 ; Rise       ; clock           ;
+;  HEX4[1]  ; clock      ; 4.747 ; 4.747 ; Rise       ; clock           ;
+;  HEX4[2]  ; clock      ; 4.747 ; 4.747 ; Rise       ; clock           ;
+;  HEX4[3]  ; clock      ; 4.604 ; 4.604 ; Rise       ; clock           ;
+;  HEX4[4]  ; clock      ; 4.619 ; 4.619 ; Rise       ; clock           ;
+;  HEX4[5]  ; clock      ; 4.630 ; 4.630 ; Rise       ; clock           ;
+;  HEX4[6]  ; clock      ; 4.578 ; 4.578 ; Rise       ; clock           ;
+; HEX5[*]   ; clock      ; 4.282 ; 4.282 ; Rise       ; clock           ;
+;  HEX5[4]  ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[5]  ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[6]  ; clock      ; 4.282 ; 4.282 ; Rise       ; clock           ;
+; abortMem  ; clock      ; 6.417 ; 6.417 ; Rise       ; clock           ;
+; dataWB    ; clock      ; 5.242 ; 5.242 ; Rise       ; clock           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -615,25 +653,27 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; clock      ; 5.702 ; 5.702 ; Rise       ; clock           ;
-;  HEX0[0]  ; clock      ; 6.118 ; 6.118 ; Rise       ; clock           ;
-;  HEX0[2]  ; clock      ; 6.094 ; 6.094 ; Rise       ; clock           ;
-;  HEX0[3]  ; clock      ; 6.233 ; 6.233 ; Rise       ; clock           ;
-;  HEX0[4]  ; clock      ; 5.702 ; 5.702 ; Rise       ; clock           ;
-;  HEX0[5]  ; clock      ; 6.225 ; 6.225 ; Rise       ; clock           ;
-;  HEX0[6]  ; clock      ; 5.770 ; 5.770 ; Rise       ; clock           ;
-; HEX4[*]   ; clock      ; 4.658 ; 4.658 ; Rise       ; clock           ;
-;  HEX4[0]  ; clock      ; 4.793 ; 4.793 ; Rise       ; clock           ;
-;  HEX4[1]  ; clock      ; 4.796 ; 4.796 ; Rise       ; clock           ;
-;  HEX4[2]  ; clock      ; 4.768 ; 4.768 ; Rise       ; clock           ;
-;  HEX4[3]  ; clock      ; 4.658 ; 4.658 ; Rise       ; clock           ;
-;  HEX4[4]  ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
-;  HEX4[5]  ; clock      ; 4.682 ; 4.682 ; Rise       ; clock           ;
-;  HEX4[6]  ; clock      ; 4.681 ; 4.681 ; Rise       ; clock           ;
-; HEX5[*]   ; clock      ; 4.286 ; 4.286 ; Rise       ; clock           ;
-;  HEX5[4]  ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[5]  ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[6]  ; clock      ; 4.286 ; 4.286 ; Rise       ; clock           ;
+; HEX0[*]   ; clock      ; 5.531 ; 5.531 ; Rise       ; clock           ;
+;  HEX0[0]  ; clock      ; 5.637 ; 5.637 ; Rise       ; clock           ;
+;  HEX0[2]  ; clock      ; 5.611 ; 5.611 ; Rise       ; clock           ;
+;  HEX0[3]  ; clock      ; 5.531 ; 5.531 ; Rise       ; clock           ;
+;  HEX0[4]  ; clock      ; 5.590 ; 5.590 ; Rise       ; clock           ;
+;  HEX0[5]  ; clock      ; 6.010 ; 6.010 ; Rise       ; clock           ;
+;  HEX0[6]  ; clock      ; 5.643 ; 5.643 ; Rise       ; clock           ;
+; HEX4[*]   ; clock      ; 4.503 ; 4.503 ; Rise       ; clock           ;
+;  HEX4[0]  ; clock      ; 4.612 ; 4.612 ; Rise       ; clock           ;
+;  HEX4[1]  ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
+;  HEX4[2]  ; clock      ; 4.708 ; 4.708 ; Rise       ; clock           ;
+;  HEX4[3]  ; clock      ; 4.538 ; 4.538 ; Rise       ; clock           ;
+;  HEX4[4]  ; clock      ; 4.556 ; 4.556 ; Rise       ; clock           ;
+;  HEX4[5]  ; clock      ; 4.559 ; 4.559 ; Rise       ; clock           ;
+;  HEX4[6]  ; clock      ; 4.503 ; 4.503 ; Rise       ; clock           ;
+; HEX5[*]   ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[4]  ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[5]  ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[6]  ; clock      ; 4.282 ; 4.282 ; Rise       ; clock           ;
+; abortMem  ; clock      ; 6.417 ; 6.417 ; Rise       ; clock           ;
+; dataWB    ; clock      ; 5.242 ; 5.242 ; Rise       ; clock           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -642,44 +682,44 @@ No paths to report.
 +-------------+-------------+-------+-------+-------+-------+
 ; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------+-------------+-------+-------+-------+-------+
-; request[16] ; HEX6[0]     ; 2.640 ; 2.640 ; 2.640 ; 2.640 ;
-; request[16] ; HEX6[1]     ; 2.640 ; 2.640 ; 2.640 ; 2.640 ;
-; request[16] ; HEX6[2]     ;       ; 2.636 ; 2.636 ;       ;
-; request[16] ; HEX6[3]     ; 2.920 ; 2.920 ; 2.920 ; 2.920 ;
-; request[16] ; HEX6[4]     ; 2.929 ;       ;       ; 2.929 ;
-; request[16] ; HEX6[5]     ; 2.904 ;       ;       ; 2.904 ;
-; request[16] ; HEX6[6]     ; 2.900 ; 2.900 ; 2.900 ; 2.900 ;
-; request[17] ; HEX6[0]     ; 5.321 ; 5.321 ; 5.321 ; 5.321 ;
-; request[17] ; HEX6[1]     ; 5.336 ; 5.336 ; 5.336 ; 5.336 ;
-; request[17] ; HEX6[2]     ; 5.332 ;       ;       ; 5.332 ;
-; request[17] ; HEX6[3]     ; 5.623 ; 5.623 ; 5.623 ; 5.623 ;
-; request[17] ; HEX6[4]     ;       ; 5.621 ; 5.621 ;       ;
-; request[17] ; HEX6[5]     ; 5.581 ; 5.581 ; 5.581 ; 5.581 ;
-; request[17] ; HEX6[6]     ; 5.595 ; 5.595 ; 5.595 ; 5.595 ;
-; request[18] ; HEX6[0]     ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
-; request[18] ; HEX6[1]     ; 5.313 ;       ;       ; 5.313 ;
-; request[18] ; HEX6[2]     ; 5.310 ; 5.310 ; 5.310 ; 5.310 ;
-; request[18] ; HEX6[3]     ; 5.591 ; 5.591 ; 5.591 ; 5.591 ;
-; request[18] ; HEX6[4]     ; 5.594 ; 5.594 ; 5.594 ; 5.594 ;
-; request[18] ; HEX6[5]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
-; request[18] ; HEX6[6]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
-; request[19] ; HEX6[0]     ; 5.167 ; 5.167 ; 5.167 ; 5.167 ;
-; request[19] ; HEX6[1]     ; 5.175 ; 5.175 ; 5.175 ; 5.175 ;
-; request[19] ; HEX6[2]     ; 5.168 ; 5.168 ; 5.168 ; 5.168 ;
-; request[19] ; HEX6[3]     ; 5.453 ; 5.453 ; 5.453 ; 5.453 ;
-; request[19] ; HEX6[4]     ;       ; 5.457 ; 5.457 ;       ;
-; request[19] ; HEX6[5]     ; 5.429 ; 5.429 ; 5.429 ; 5.429 ;
-; request[19] ; HEX6[6]     ; 5.433 ; 5.433 ; 5.433 ; 5.433 ;
-; request[20] ; HEX7[0]     ; 5.405 ;       ;       ; 5.405 ;
-; request[20] ; HEX7[2]     ;       ; 5.551 ; 5.551 ;       ;
-; request[20] ; HEX7[3]     ; 5.375 ;       ;       ; 5.375 ;
-; request[20] ; HEX7[4]     ; 5.057 ;       ;       ; 5.057 ;
-; request[20] ; HEX7[5]     ; 5.591 ;       ;       ; 5.591 ;
-; request[21] ; HEX7[0]     ;       ; 5.327 ; 5.327 ;       ;
-; request[21] ; HEX7[2]     ; 5.524 ;       ;       ; 5.524 ;
-; request[21] ; HEX7[3]     ;       ; 5.297 ; 5.297 ;       ;
-; request[21] ; HEX7[5]     ; 5.540 ;       ;       ; 5.540 ;
-; request[21] ; HEX7[6]     ;       ; 5.208 ; 5.208 ;       ;
+; request[16] ; HEX6[0]     ; 2.587 ; 2.587 ; 2.587 ; 2.587 ;
+; request[16] ; HEX6[1]     ; 2.589 ; 2.589 ; 2.589 ; 2.589 ;
+; request[16] ; HEX6[2]     ;       ; 2.578 ; 2.578 ;       ;
+; request[16] ; HEX6[3]     ; 2.866 ; 2.866 ; 2.866 ; 2.866 ;
+; request[16] ; HEX6[4]     ; 2.868 ;       ;       ; 2.868 ;
+; request[16] ; HEX6[5]     ; 2.855 ;       ;       ; 2.855 ;
+; request[16] ; HEX6[6]     ; 2.848 ; 2.848 ; 2.848 ; 2.848 ;
+; request[17] ; HEX6[0]     ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
+; request[17] ; HEX6[1]     ; 5.308 ; 5.308 ; 5.308 ; 5.308 ;
+; request[17] ; HEX6[2]     ; 5.312 ;       ;       ; 5.312 ;
+; request[17] ; HEX6[3]     ; 5.580 ; 5.580 ; 5.580 ; 5.580 ;
+; request[17] ; HEX6[4]     ;       ; 5.583 ; 5.583 ;       ;
+; request[17] ; HEX6[5]     ; 5.571 ; 5.571 ; 5.571 ; 5.571 ;
+; request[17] ; HEX6[6]     ; 5.560 ; 5.560 ; 5.560 ; 5.560 ;
+; request[18] ; HEX6[0]     ; 5.319 ; 5.319 ; 5.319 ; 5.319 ;
+; request[18] ; HEX6[1]     ; 5.322 ;       ;       ; 5.322 ;
+; request[18] ; HEX6[2]     ; 5.324 ; 5.324 ; 5.324 ; 5.324 ;
+; request[18] ; HEX6[3]     ; 5.597 ; 5.597 ; 5.597 ; 5.597 ;
+; request[18] ; HEX6[4]     ; 5.599 ; 5.599 ; 5.599 ; 5.599 ;
+; request[18] ; HEX6[5]     ; 5.586 ; 5.586 ; 5.586 ; 5.586 ;
+; request[18] ; HEX6[6]     ; 5.578 ; 5.578 ; 5.578 ; 5.578 ;
+; request[19] ; HEX6[0]     ; 5.370 ; 5.370 ; 5.370 ; 5.370 ;
+; request[19] ; HEX6[1]     ; 5.373 ; 5.373 ; 5.373 ; 5.373 ;
+; request[19] ; HEX6[2]     ; 5.375 ; 5.375 ; 5.375 ; 5.375 ;
+; request[19] ; HEX6[3]     ; 5.648 ; 5.648 ; 5.648 ; 5.648 ;
+; request[19] ; HEX6[4]     ;       ; 5.650 ; 5.650 ;       ;
+; request[19] ; HEX6[5]     ; 5.638 ; 5.638 ; 5.638 ; 5.638 ;
+; request[19] ; HEX6[6]     ; 5.630 ; 5.630 ; 5.630 ; 5.630 ;
+; request[20] ; HEX7[0]     ; 5.422 ;       ;       ; 5.422 ;
+; request[20] ; HEX7[2]     ;       ; 5.369 ; 5.369 ;       ;
+; request[20] ; HEX7[3]     ; 5.392 ;       ;       ; 5.392 ;
+; request[20] ; HEX7[4]     ; 5.061 ;       ;       ; 5.061 ;
+; request[20] ; HEX7[5]     ; 5.471 ;       ;       ; 5.471 ;
+; request[21] ; HEX7[0]     ;       ; 5.343 ; 5.343 ;       ;
+; request[21] ; HEX7[2]     ; 5.319 ;       ;       ; 5.319 ;
+; request[21] ; HEX7[3]     ;       ; 5.313 ; 5.313 ;       ;
+; request[21] ; HEX7[5]     ; 5.420 ;       ;       ; 5.420 ;
+; request[21] ; HEX7[6]     ;       ; 5.213 ; 5.213 ;       ;
 +-------------+-------------+-------+-------+-------+-------+
 
 
@@ -688,44 +728,44 @@ No paths to report.
 +-------------+-------------+-------+-------+-------+-------+
 ; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------+-------------+-------+-------+-------+-------+
-; request[16] ; HEX6[0]     ; 2.640 ; 2.640 ; 2.640 ; 2.640 ;
-; request[16] ; HEX6[1]     ; 2.640 ; 2.640 ; 2.640 ; 2.640 ;
-; request[16] ; HEX6[2]     ;       ; 2.636 ; 2.636 ;       ;
-; request[16] ; HEX6[3]     ; 2.920 ; 2.920 ; 2.920 ; 2.920 ;
-; request[16] ; HEX6[4]     ; 2.929 ;       ;       ; 2.929 ;
-; request[16] ; HEX6[5]     ; 2.904 ;       ;       ; 2.904 ;
-; request[16] ; HEX6[6]     ; 2.900 ; 2.900 ; 2.900 ; 2.900 ;
-; request[17] ; HEX6[0]     ; 5.321 ; 5.321 ; 5.321 ; 5.321 ;
-; request[17] ; HEX6[1]     ; 5.336 ; 5.336 ; 5.336 ; 5.336 ;
-; request[17] ; HEX6[2]     ; 5.332 ;       ;       ; 5.332 ;
-; request[17] ; HEX6[3]     ; 5.623 ; 5.623 ; 5.623 ; 5.623 ;
-; request[17] ; HEX6[4]     ;       ; 5.621 ; 5.621 ;       ;
-; request[17] ; HEX6[5]     ; 5.581 ; 5.581 ; 5.581 ; 5.581 ;
-; request[17] ; HEX6[6]     ; 5.595 ; 5.595 ; 5.595 ; 5.595 ;
-; request[18] ; HEX6[0]     ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
-; request[18] ; HEX6[1]     ; 5.313 ;       ;       ; 5.313 ;
-; request[18] ; HEX6[2]     ; 5.310 ; 5.310 ; 5.310 ; 5.310 ;
-; request[18] ; HEX6[3]     ; 5.591 ; 5.591 ; 5.591 ; 5.591 ;
-; request[18] ; HEX6[4]     ; 5.594 ; 5.594 ; 5.594 ; 5.594 ;
-; request[18] ; HEX6[5]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
-; request[18] ; HEX6[6]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
-; request[19] ; HEX6[0]     ; 5.167 ; 5.167 ; 5.167 ; 5.167 ;
-; request[19] ; HEX6[1]     ; 5.175 ; 5.175 ; 5.175 ; 5.175 ;
-; request[19] ; HEX6[2]     ; 5.168 ; 5.168 ; 5.168 ; 5.168 ;
-; request[19] ; HEX6[3]     ; 5.453 ; 5.453 ; 5.453 ; 5.453 ;
-; request[19] ; HEX6[4]     ;       ; 5.457 ; 5.457 ;       ;
-; request[19] ; HEX6[5]     ; 5.429 ; 5.429 ; 5.429 ; 5.429 ;
-; request[19] ; HEX6[6]     ; 5.433 ; 5.433 ; 5.433 ; 5.433 ;
-; request[20] ; HEX7[0]     ; 5.405 ;       ;       ; 5.405 ;
-; request[20] ; HEX7[2]     ;       ; 5.551 ; 5.551 ;       ;
-; request[20] ; HEX7[3]     ; 5.375 ;       ;       ; 5.375 ;
-; request[20] ; HEX7[4]     ; 5.057 ;       ;       ; 5.057 ;
-; request[20] ; HEX7[5]     ; 5.591 ;       ;       ; 5.591 ;
-; request[21] ; HEX7[0]     ;       ; 5.327 ; 5.327 ;       ;
-; request[21] ; HEX7[2]     ; 5.524 ;       ;       ; 5.524 ;
-; request[21] ; HEX7[3]     ;       ; 5.297 ; 5.297 ;       ;
-; request[21] ; HEX7[5]     ; 5.540 ;       ;       ; 5.540 ;
-; request[21] ; HEX7[6]     ;       ; 5.208 ; 5.208 ;       ;
+; request[16] ; HEX6[0]     ; 2.587 ; 2.587 ; 2.587 ; 2.587 ;
+; request[16] ; HEX6[1]     ; 2.589 ; 2.589 ; 2.589 ; 2.589 ;
+; request[16] ; HEX6[2]     ;       ; 2.578 ; 2.578 ;       ;
+; request[16] ; HEX6[3]     ; 2.866 ; 2.866 ; 2.866 ; 2.866 ;
+; request[16] ; HEX6[4]     ; 2.868 ;       ;       ; 2.868 ;
+; request[16] ; HEX6[5]     ; 2.855 ;       ;       ; 2.855 ;
+; request[16] ; HEX6[6]     ; 2.848 ; 2.848 ; 2.848 ; 2.848 ;
+; request[17] ; HEX6[0]     ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
+; request[17] ; HEX6[1]     ; 5.308 ; 5.308 ; 5.308 ; 5.308 ;
+; request[17] ; HEX6[2]     ; 5.312 ;       ;       ; 5.312 ;
+; request[17] ; HEX6[3]     ; 5.580 ; 5.580 ; 5.580 ; 5.580 ;
+; request[17] ; HEX6[4]     ;       ; 5.583 ; 5.583 ;       ;
+; request[17] ; HEX6[5]     ; 5.571 ; 5.571 ; 5.571 ; 5.571 ;
+; request[17] ; HEX6[6]     ; 5.560 ; 5.560 ; 5.560 ; 5.560 ;
+; request[18] ; HEX6[0]     ; 5.319 ; 5.319 ; 5.319 ; 5.319 ;
+; request[18] ; HEX6[1]     ; 5.322 ;       ;       ; 5.322 ;
+; request[18] ; HEX6[2]     ; 5.324 ; 5.324 ; 5.324 ; 5.324 ;
+; request[18] ; HEX6[3]     ; 5.597 ; 5.597 ; 5.597 ; 5.597 ;
+; request[18] ; HEX6[4]     ; 5.599 ; 5.599 ; 5.599 ; 5.599 ;
+; request[18] ; HEX6[5]     ; 5.586 ; 5.586 ; 5.586 ; 5.586 ;
+; request[18] ; HEX6[6]     ; 5.578 ; 5.578 ; 5.578 ; 5.578 ;
+; request[19] ; HEX6[0]     ; 5.370 ; 5.370 ; 5.370 ; 5.370 ;
+; request[19] ; HEX6[1]     ; 5.373 ; 5.373 ; 5.373 ; 5.373 ;
+; request[19] ; HEX6[2]     ; 5.375 ; 5.375 ; 5.375 ; 5.375 ;
+; request[19] ; HEX6[3]     ; 5.648 ; 5.648 ; 5.648 ; 5.648 ;
+; request[19] ; HEX6[4]     ;       ; 5.650 ; 5.650 ;       ;
+; request[19] ; HEX6[5]     ; 5.638 ; 5.638 ; 5.638 ; 5.638 ;
+; request[19] ; HEX6[6]     ; 5.630 ; 5.630 ; 5.630 ; 5.630 ;
+; request[20] ; HEX7[0]     ; 5.422 ;       ;       ; 5.422 ;
+; request[20] ; HEX7[2]     ;       ; 5.369 ; 5.369 ;       ;
+; request[20] ; HEX7[3]     ; 5.392 ;       ;       ; 5.392 ;
+; request[20] ; HEX7[4]     ; 5.061 ;       ;       ; 5.061 ;
+; request[20] ; HEX7[5]     ; 5.471 ;       ;       ; 5.471 ;
+; request[21] ; HEX7[0]     ;       ; 5.343 ; 5.343 ;       ;
+; request[21] ; HEX7[2]     ; 5.319 ;       ;       ; 5.319 ;
+; request[21] ; HEX7[3]     ;       ; 5.313 ; 5.313 ;       ;
+; request[21] ; HEX7[5]     ; 5.420 ;       ;       ; 5.420 ;
+; request[21] ; HEX7[6]     ;       ; 5.213 ; 5.213 ;       ;
 +-------------+-------------+-------+-------+-------+-------+
 
 
@@ -734,10 +774,10 @@ No paths to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -1.187 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
-;  clock           ; -1.187 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
-; Design-wide TNS  ; -5.155 ; 0.0   ; 0.0      ; 0.0     ; -8.222              ;
-;  clock           ; -5.155 ; 0.000 ; N/A      ; N/A     ; -8.222              ;
+; Worst-case Slack ; -1.453 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+;  clock           ; -1.453 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -7.587 ; 0.0   ; 0.0      ; 0.0     ; -10.222             ;
+;  clock           ; -7.587 ; 0.000 ; N/A      ; N/A     ; -10.222             ;
 +------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -746,14 +786,14 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; listen       ; clock      ; 0.414  ; 0.414  ; Rise       ; clock           ;
-; request[*]   ; clock      ; 4.306  ; 4.306  ; Rise       ; clock           ;
-;  request[16] ; clock      ; -0.569 ; -0.569 ; Rise       ; clock           ;
-;  request[17] ; clock      ; 3.995  ; 3.995  ; Rise       ; clock           ;
-;  request[18] ; clock      ; 4.037  ; 4.037  ; Rise       ; clock           ;
-;  request[19] ; clock      ; 4.306  ; 4.306  ; Rise       ; clock           ;
-;  request[20] ; clock      ; 4.247  ; 4.247  ; Rise       ; clock           ;
-;  request[21] ; clock      ; 4.172  ; 4.172  ; Rise       ; clock           ;
+; listen       ; clock      ; 0.538  ; 0.538  ; Rise       ; clock           ;
+; request[*]   ; clock      ; 4.581  ; 4.581  ; Rise       ; clock           ;
+;  request[16] ; clock      ; -0.431 ; -0.431 ; Rise       ; clock           ;
+;  request[17] ; clock      ; 4.085  ; 4.085  ; Rise       ; clock           ;
+;  request[18] ; clock      ; 4.517  ; 4.517  ; Rise       ; clock           ;
+;  request[19] ; clock      ; 4.581  ; 4.581  ; Rise       ; clock           ;
+;  request[20] ; clock      ; 4.500  ; 4.500  ; Rise       ; clock           ;
+;  request[21] ; clock      ; 4.273  ; 4.273  ; Rise       ; clock           ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -762,14 +802,14 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; listen       ; clock      ; 0.793  ; 0.793  ; Rise       ; clock           ;
-; request[*]   ; clock      ; 2.464  ; 2.464  ; Rise       ; clock           ;
-;  request[16] ; clock      ; 2.464  ; 2.464  ; Rise       ; clock           ;
-;  request[17] ; clock      ; -1.224 ; -1.224 ; Rise       ; clock           ;
-;  request[18] ; clock      ; -1.343 ; -1.343 ; Rise       ; clock           ;
-;  request[19] ; clock      ; -1.479 ; -1.479 ; Rise       ; clock           ;
-;  request[20] ; clock      ; -1.459 ; -1.459 ; Rise       ; clock           ;
-;  request[21] ; clock      ; -1.431 ; -1.431 ; Rise       ; clock           ;
+; listen       ; clock      ; 0.586  ; 0.586  ; Rise       ; clock           ;
+; request[*]   ; clock      ; 1.985  ; 1.985  ; Rise       ; clock           ;
+;  request[16] ; clock      ; 1.985  ; 1.985  ; Rise       ; clock           ;
+;  request[17] ; clock      ; -1.372 ; -1.372 ; Rise       ; clock           ;
+;  request[18] ; clock      ; -1.280 ; -1.280 ; Rise       ; clock           ;
+;  request[19] ; clock      ; -1.523 ; -1.523 ; Rise       ; clock           ;
+;  request[20] ; clock      ; -1.472 ; -1.472 ; Rise       ; clock           ;
+;  request[21] ; clock      ; -1.430 ; -1.430 ; Rise       ; clock           ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -778,25 +818,27 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clock      ; 12.042 ; 12.042 ; Rise       ; clock           ;
-;  HEX0[0]  ; clock      ; 11.797 ; 11.797 ; Rise       ; clock           ;
-;  HEX0[2]  ; clock      ; 11.719 ; 11.719 ; Rise       ; clock           ;
-;  HEX0[3]  ; clock      ; 12.042 ; 12.042 ; Rise       ; clock           ;
-;  HEX0[4]  ; clock      ; 10.690 ; 10.690 ; Rise       ; clock           ;
-;  HEX0[5]  ; clock      ; 12.019 ; 12.019 ; Rise       ; clock           ;
-;  HEX0[6]  ; clock      ; 10.867 ; 10.867 ; Rise       ; clock           ;
-; HEX4[*]   ; clock      ; 9.319  ; 9.319  ; Rise       ; clock           ;
-;  HEX4[0]  ; clock      ; 9.319  ; 9.319  ; Rise       ; clock           ;
-;  HEX4[1]  ; clock      ; 9.316  ; 9.316  ; Rise       ; clock           ;
-;  HEX4[2]  ; clock      ; 9.166  ; 9.166  ; Rise       ; clock           ;
-;  HEX4[3]  ; clock      ; 9.030  ; 9.030  ; Rise       ; clock           ;
-;  HEX4[4]  ; clock      ; 9.013  ; 9.013  ; Rise       ; clock           ;
-;  HEX4[5]  ; clock      ; 9.052  ; 9.052  ; Rise       ; clock           ;
-;  HEX4[6]  ; clock      ; 9.131  ; 9.131  ; Rise       ; clock           ;
-; HEX5[*]   ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[4]  ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[5]  ; clock      ; 8.319  ; 8.319  ; Rise       ; clock           ;
-;  HEX5[6]  ; clock      ; 8.035  ; 8.035  ; Rise       ; clock           ;
+; HEX0[*]   ; clock      ; 11.482 ; 11.482 ; Rise       ; clock           ;
+;  HEX0[0]  ; clock      ; 10.848 ; 10.848 ; Rise       ; clock           ;
+;  HEX0[2]  ; clock      ; 11.316 ; 11.316 ; Rise       ; clock           ;
+;  HEX0[3]  ; clock      ; 10.617 ; 10.617 ; Rise       ; clock           ;
+;  HEX0[4]  ; clock      ; 10.437 ; 10.437 ; Rise       ; clock           ;
+;  HEX0[5]  ; clock      ; 11.482 ; 11.482 ; Rise       ; clock           ;
+;  HEX0[6]  ; clock      ; 10.577 ; 10.577 ; Rise       ; clock           ;
+; HEX4[*]   ; clock      ; 9.085  ; 9.085  ; Rise       ; clock           ;
+;  HEX4[0]  ; clock      ; 8.959  ; 8.959  ; Rise       ; clock           ;
+;  HEX4[1]  ; clock      ; 9.085  ; 9.085  ; Rise       ; clock           ;
+;  HEX4[2]  ; clock      ; 9.044  ; 9.044  ; Rise       ; clock           ;
+;  HEX4[3]  ; clock      ; 8.790  ; 8.790  ; Rise       ; clock           ;
+;  HEX4[4]  ; clock      ; 8.797  ; 8.797  ; Rise       ; clock           ;
+;  HEX4[5]  ; clock      ; 8.810  ; 8.810  ; Rise       ; clock           ;
+;  HEX4[6]  ; clock      ; 8.677  ; 8.677  ; Rise       ; clock           ;
+; HEX5[*]   ; clock      ; 8.026  ; 8.026  ; Rise       ; clock           ;
+;  HEX5[4]  ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[5]  ; clock      ; 7.744  ; 7.744  ; Rise       ; clock           ;
+;  HEX5[6]  ; clock      ; 8.026  ; 8.026  ; Rise       ; clock           ;
+; abortMem  ; clock      ; 12.479 ; 12.479 ; Rise       ; clock           ;
+; dataWB    ; clock      ; 9.756  ; 9.756  ; Rise       ; clock           ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -805,25 +847,27 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; clock      ; 5.702 ; 5.702 ; Rise       ; clock           ;
-;  HEX0[0]  ; clock      ; 6.118 ; 6.118 ; Rise       ; clock           ;
-;  HEX0[2]  ; clock      ; 6.094 ; 6.094 ; Rise       ; clock           ;
-;  HEX0[3]  ; clock      ; 6.233 ; 6.233 ; Rise       ; clock           ;
-;  HEX0[4]  ; clock      ; 5.702 ; 5.702 ; Rise       ; clock           ;
-;  HEX0[5]  ; clock      ; 6.225 ; 6.225 ; Rise       ; clock           ;
-;  HEX0[6]  ; clock      ; 5.770 ; 5.770 ; Rise       ; clock           ;
-; HEX4[*]   ; clock      ; 4.658 ; 4.658 ; Rise       ; clock           ;
-;  HEX4[0]  ; clock      ; 4.793 ; 4.793 ; Rise       ; clock           ;
-;  HEX4[1]  ; clock      ; 4.796 ; 4.796 ; Rise       ; clock           ;
-;  HEX4[2]  ; clock      ; 4.768 ; 4.768 ; Rise       ; clock           ;
-;  HEX4[3]  ; clock      ; 4.658 ; 4.658 ; Rise       ; clock           ;
-;  HEX4[4]  ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
-;  HEX4[5]  ; clock      ; 4.682 ; 4.682 ; Rise       ; clock           ;
-;  HEX4[6]  ; clock      ; 4.681 ; 4.681 ; Rise       ; clock           ;
-; HEX5[*]   ; clock      ; 4.286 ; 4.286 ; Rise       ; clock           ;
-;  HEX5[4]  ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[5]  ; clock      ; 4.407 ; 4.407 ; Rise       ; clock           ;
-;  HEX5[6]  ; clock      ; 4.286 ; 4.286 ; Rise       ; clock           ;
+; HEX0[*]   ; clock      ; 5.531 ; 5.531 ; Rise       ; clock           ;
+;  HEX0[0]  ; clock      ; 5.637 ; 5.637 ; Rise       ; clock           ;
+;  HEX0[2]  ; clock      ; 5.611 ; 5.611 ; Rise       ; clock           ;
+;  HEX0[3]  ; clock      ; 5.531 ; 5.531 ; Rise       ; clock           ;
+;  HEX0[4]  ; clock      ; 5.590 ; 5.590 ; Rise       ; clock           ;
+;  HEX0[5]  ; clock      ; 6.010 ; 6.010 ; Rise       ; clock           ;
+;  HEX0[6]  ; clock      ; 5.643 ; 5.643 ; Rise       ; clock           ;
+; HEX4[*]   ; clock      ; 4.503 ; 4.503 ; Rise       ; clock           ;
+;  HEX4[0]  ; clock      ; 4.612 ; 4.612 ; Rise       ; clock           ;
+;  HEX4[1]  ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
+;  HEX4[2]  ; clock      ; 4.708 ; 4.708 ; Rise       ; clock           ;
+;  HEX4[3]  ; clock      ; 4.538 ; 4.538 ; Rise       ; clock           ;
+;  HEX4[4]  ; clock      ; 4.556 ; 4.556 ; Rise       ; clock           ;
+;  HEX4[5]  ; clock      ; 4.559 ; 4.559 ; Rise       ; clock           ;
+;  HEX4[6]  ; clock      ; 4.503 ; 4.503 ; Rise       ; clock           ;
+; HEX5[*]   ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[4]  ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[5]  ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  HEX5[6]  ; clock      ; 4.282 ; 4.282 ; Rise       ; clock           ;
+; abortMem  ; clock      ; 6.417 ; 6.417 ; Rise       ; clock           ;
+; dataWB    ; clock      ; 5.242 ; 5.242 ; Rise       ; clock           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -832,44 +876,44 @@ No paths to report.
 +-------------+-------------+--------+--------+--------+--------+
 ; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +-------------+-------------+--------+--------+--------+--------+
-; request[16] ; HEX6[0]     ; 5.058  ; 5.058  ; 5.058  ; 5.058  ;
-; request[16] ; HEX6[1]     ; 5.075  ; 5.075  ; 5.075  ; 5.075  ;
-; request[16] ; HEX6[2]     ;        ; 5.056  ; 5.056  ;        ;
-; request[16] ; HEX6[3]     ; 5.608  ; 5.608  ; 5.608  ; 5.608  ;
-; request[16] ; HEX6[4]     ; 5.618  ;        ;        ; 5.618  ;
-; request[16] ; HEX6[5]     ; 5.587  ;        ;        ; 5.587  ;
-; request[16] ; HEX6[6]     ; 5.584  ; 5.584  ; 5.584  ; 5.584  ;
-; request[17] ; HEX6[0]     ; 9.539  ; 9.539  ; 9.539  ; 9.539  ;
-; request[17] ; HEX6[1]     ; 9.592  ; 9.592  ; 9.592  ; 9.592  ;
-; request[17] ; HEX6[2]     ; 9.574  ;        ;        ; 9.574  ;
-; request[17] ; HEX6[3]     ; 10.126 ; 10.126 ; 10.126 ; 10.126 ;
-; request[17] ; HEX6[4]     ;        ; 10.138 ; 10.138 ;        ;
-; request[17] ; HEX6[5]     ; 10.090 ; 10.090 ; 10.090 ; 10.090 ;
-; request[17] ; HEX6[6]     ; 10.106 ; 10.106 ; 10.106 ; 10.106 ;
-; request[18] ; HEX6[0]     ; 9.501  ; 9.501  ; 9.501  ; 9.501  ;
-; request[18] ; HEX6[1]     ; 9.530  ;        ;        ; 9.530  ;
-; request[18] ; HEX6[2]     ; 9.483  ; 9.483  ; 9.483  ; 9.483  ;
-; request[18] ; HEX6[3]     ; 10.060 ; 10.060 ; 10.060 ; 10.060 ;
-; request[18] ; HEX6[4]     ; 10.071 ; 10.071 ; 10.071 ; 10.071 ;
-; request[18] ; HEX6[5]     ; 10.033 ; 10.033 ; 10.033 ; 10.033 ;
-; request[18] ; HEX6[6]     ; 10.042 ; 10.042 ; 10.042 ; 10.042 ;
-; request[19] ; HEX6[0]     ; 9.214  ; 9.214  ; 9.214  ; 9.214  ;
-; request[19] ; HEX6[1]     ; 9.235  ; 9.235  ; 9.235  ; 9.235  ;
-; request[19] ; HEX6[2]     ; 9.215  ; 9.215  ; 9.215  ; 9.215  ;
-; request[19] ; HEX6[3]     ; 9.768  ; 9.768  ; 9.768  ; 9.768  ;
-; request[19] ; HEX6[4]     ;        ; 9.776  ; 9.776  ;        ;
-; request[19] ; HEX6[5]     ; 9.743  ; 9.743  ; 9.743  ; 9.743  ;
-; request[19] ; HEX6[6]     ; 9.748  ; 9.748  ; 9.748  ; 9.748  ;
-; request[20] ; HEX7[0]     ; 9.563  ;        ;        ; 9.563  ;
-; request[20] ; HEX7[2]     ;        ; 9.970  ; 9.970  ;        ;
-; request[20] ; HEX7[3]     ; 9.533  ;        ;        ; 9.533  ;
-; request[20] ; HEX7[4]     ; 8.831  ;        ;        ; 8.831  ;
-; request[20] ; HEX7[5]     ; 10.019 ;        ;        ; 10.019 ;
-; request[21] ; HEX7[0]     ;        ; 9.428  ; 9.428  ;        ;
-; request[21] ; HEX7[2]     ; 9.885  ;        ;        ; 9.885  ;
-; request[21] ; HEX7[3]     ;        ; 9.398  ; 9.398  ;        ;
-; request[21] ; HEX7[5]     ; 9.938  ;        ;        ; 9.938  ;
-; request[21] ; HEX7[6]     ;        ; 9.146  ; 9.146  ;        ;
+; request[16] ; HEX6[0]     ; 4.953  ; 4.953  ; 4.953  ; 4.953  ;
+; request[16] ; HEX6[1]     ; 4.959  ; 4.959  ; 4.959  ; 4.959  ;
+; request[16] ; HEX6[2]     ;        ; 4.942  ; 4.942  ;        ;
+; request[16] ; HEX6[3]     ; 5.495  ; 5.495  ; 5.495  ; 5.495  ;
+; request[16] ; HEX6[4]     ; 5.500  ;        ;        ; 5.500  ;
+; request[16] ; HEX6[5]     ; 5.495  ;        ;        ; 5.495  ;
+; request[16] ; HEX6[6]     ; 5.479  ; 5.479  ; 5.479  ; 5.479  ;
+; request[17] ; HEX6[0]     ; 9.502  ; 9.502  ; 9.502  ; 9.502  ;
+; request[17] ; HEX6[1]     ; 9.541  ; 9.541  ; 9.541  ; 9.541  ;
+; request[17] ; HEX6[2]     ; 9.531  ;        ;        ; 9.531  ;
+; request[17] ; HEX6[3]     ; 10.069 ; 10.069 ; 10.069 ; 10.069 ;
+; request[17] ; HEX6[4]     ;        ; 10.051 ; 10.051 ;        ;
+; request[17] ; HEX6[5]     ; 10.072 ; 10.072 ; 10.072 ; 10.072 ;
+; request[17] ; HEX6[6]     ; 10.053 ; 10.053 ; 10.053 ; 10.053 ;
+; request[18] ; HEX6[0]     ; 9.570  ; 9.570  ; 9.570  ; 9.570  ;
+; request[18] ; HEX6[1]     ; 9.577  ;        ;        ; 9.577  ;
+; request[18] ; HEX6[2]     ; 9.568  ; 9.568  ; 9.568  ; 9.568  ;
+; request[18] ; HEX6[3]     ; 10.109 ; 10.109 ; 10.109 ; 10.109 ;
+; request[18] ; HEX6[4]     ; 10.114 ; 10.114 ; 10.114 ; 10.114 ;
+; request[18] ; HEX6[5]     ; 10.108 ; 10.108 ; 10.108 ; 10.108 ;
+; request[18] ; HEX6[6]     ; 10.092 ; 10.092 ; 10.092 ; 10.092 ;
+; request[19] ; HEX6[0]     ; 9.670  ; 9.670  ; 9.670  ; 9.670  ;
+; request[19] ; HEX6[1]     ; 9.706  ; 9.706  ; 9.706  ; 9.706  ;
+; request[19] ; HEX6[2]     ; 9.697  ; 9.697  ; 9.697  ; 9.697  ;
+; request[19] ; HEX6[3]     ; 10.241 ; 10.241 ; 10.241 ; 10.241 ;
+; request[19] ; HEX6[4]     ;        ; 10.210 ; 10.210 ;        ;
+; request[19] ; HEX6[5]     ; 10.209 ; 10.209 ; 10.209 ; 10.209 ;
+; request[19] ; HEX6[6]     ; 10.224 ; 10.224 ; 10.224 ; 10.224 ;
+; request[20] ; HEX7[0]     ; 9.582  ;        ;        ; 9.582  ;
+; request[20] ; HEX7[2]     ;        ; 9.564  ; 9.564  ;        ;
+; request[20] ; HEX7[3]     ; 9.552  ;        ;        ; 9.552  ;
+; request[20] ; HEX7[4]     ; 8.849  ;        ;        ; 8.849  ;
+; request[20] ; HEX7[5]     ; 9.719  ;        ;        ; 9.719  ;
+; request[21] ; HEX7[0]     ;        ; 9.455  ; 9.455  ;        ;
+; request[21] ; HEX7[2]     ; 9.437  ;        ;        ; 9.437  ;
+; request[21] ; HEX7[3]     ;        ; 9.425  ; 9.425  ;        ;
+; request[21] ; HEX7[5]     ; 9.624  ;        ;        ; 9.624  ;
+; request[21] ; HEX7[6]     ;        ; 9.166  ; 9.166  ;        ;
 +-------------+-------------+--------+--------+--------+--------+
 
 
@@ -878,44 +922,44 @@ No paths to report.
 +-------------+-------------+-------+-------+-------+-------+
 ; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------+-------------+-------+-------+-------+-------+
-; request[16] ; HEX6[0]     ; 2.640 ; 2.640 ; 2.640 ; 2.640 ;
-; request[16] ; HEX6[1]     ; 2.640 ; 2.640 ; 2.640 ; 2.640 ;
-; request[16] ; HEX6[2]     ;       ; 2.636 ; 2.636 ;       ;
-; request[16] ; HEX6[3]     ; 2.920 ; 2.920 ; 2.920 ; 2.920 ;
-; request[16] ; HEX6[4]     ; 2.929 ;       ;       ; 2.929 ;
-; request[16] ; HEX6[5]     ; 2.904 ;       ;       ; 2.904 ;
-; request[16] ; HEX6[6]     ; 2.900 ; 2.900 ; 2.900 ; 2.900 ;
-; request[17] ; HEX6[0]     ; 5.321 ; 5.321 ; 5.321 ; 5.321 ;
-; request[17] ; HEX6[1]     ; 5.336 ; 5.336 ; 5.336 ; 5.336 ;
-; request[17] ; HEX6[2]     ; 5.332 ;       ;       ; 5.332 ;
-; request[17] ; HEX6[3]     ; 5.623 ; 5.623 ; 5.623 ; 5.623 ;
-; request[17] ; HEX6[4]     ;       ; 5.621 ; 5.621 ;       ;
-; request[17] ; HEX6[5]     ; 5.581 ; 5.581 ; 5.581 ; 5.581 ;
-; request[17] ; HEX6[6]     ; 5.595 ; 5.595 ; 5.595 ; 5.595 ;
-; request[18] ; HEX6[0]     ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
-; request[18] ; HEX6[1]     ; 5.313 ;       ;       ; 5.313 ;
-; request[18] ; HEX6[2]     ; 5.310 ; 5.310 ; 5.310 ; 5.310 ;
-; request[18] ; HEX6[3]     ; 5.591 ; 5.591 ; 5.591 ; 5.591 ;
-; request[18] ; HEX6[4]     ; 5.594 ; 5.594 ; 5.594 ; 5.594 ;
-; request[18] ; HEX6[5]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
-; request[18] ; HEX6[6]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
-; request[19] ; HEX6[0]     ; 5.167 ; 5.167 ; 5.167 ; 5.167 ;
-; request[19] ; HEX6[1]     ; 5.175 ; 5.175 ; 5.175 ; 5.175 ;
-; request[19] ; HEX6[2]     ; 5.168 ; 5.168 ; 5.168 ; 5.168 ;
-; request[19] ; HEX6[3]     ; 5.453 ; 5.453 ; 5.453 ; 5.453 ;
-; request[19] ; HEX6[4]     ;       ; 5.457 ; 5.457 ;       ;
-; request[19] ; HEX6[5]     ; 5.429 ; 5.429 ; 5.429 ; 5.429 ;
-; request[19] ; HEX6[6]     ; 5.433 ; 5.433 ; 5.433 ; 5.433 ;
-; request[20] ; HEX7[0]     ; 5.405 ;       ;       ; 5.405 ;
-; request[20] ; HEX7[2]     ;       ; 5.551 ; 5.551 ;       ;
-; request[20] ; HEX7[3]     ; 5.375 ;       ;       ; 5.375 ;
-; request[20] ; HEX7[4]     ; 5.057 ;       ;       ; 5.057 ;
-; request[20] ; HEX7[5]     ; 5.591 ;       ;       ; 5.591 ;
-; request[21] ; HEX7[0]     ;       ; 5.327 ; 5.327 ;       ;
-; request[21] ; HEX7[2]     ; 5.524 ;       ;       ; 5.524 ;
-; request[21] ; HEX7[3]     ;       ; 5.297 ; 5.297 ;       ;
-; request[21] ; HEX7[5]     ; 5.540 ;       ;       ; 5.540 ;
-; request[21] ; HEX7[6]     ;       ; 5.208 ; 5.208 ;       ;
+; request[16] ; HEX6[0]     ; 2.587 ; 2.587 ; 2.587 ; 2.587 ;
+; request[16] ; HEX6[1]     ; 2.589 ; 2.589 ; 2.589 ; 2.589 ;
+; request[16] ; HEX6[2]     ;       ; 2.578 ; 2.578 ;       ;
+; request[16] ; HEX6[3]     ; 2.866 ; 2.866 ; 2.866 ; 2.866 ;
+; request[16] ; HEX6[4]     ; 2.868 ;       ;       ; 2.868 ;
+; request[16] ; HEX6[5]     ; 2.855 ;       ;       ; 2.855 ;
+; request[16] ; HEX6[6]     ; 2.848 ; 2.848 ; 2.848 ; 2.848 ;
+; request[17] ; HEX6[0]     ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
+; request[17] ; HEX6[1]     ; 5.308 ; 5.308 ; 5.308 ; 5.308 ;
+; request[17] ; HEX6[2]     ; 5.312 ;       ;       ; 5.312 ;
+; request[17] ; HEX6[3]     ; 5.580 ; 5.580 ; 5.580 ; 5.580 ;
+; request[17] ; HEX6[4]     ;       ; 5.583 ; 5.583 ;       ;
+; request[17] ; HEX6[5]     ; 5.571 ; 5.571 ; 5.571 ; 5.571 ;
+; request[17] ; HEX6[6]     ; 5.560 ; 5.560 ; 5.560 ; 5.560 ;
+; request[18] ; HEX6[0]     ; 5.319 ; 5.319 ; 5.319 ; 5.319 ;
+; request[18] ; HEX6[1]     ; 5.322 ;       ;       ; 5.322 ;
+; request[18] ; HEX6[2]     ; 5.324 ; 5.324 ; 5.324 ; 5.324 ;
+; request[18] ; HEX6[3]     ; 5.597 ; 5.597 ; 5.597 ; 5.597 ;
+; request[18] ; HEX6[4]     ; 5.599 ; 5.599 ; 5.599 ; 5.599 ;
+; request[18] ; HEX6[5]     ; 5.586 ; 5.586 ; 5.586 ; 5.586 ;
+; request[18] ; HEX6[6]     ; 5.578 ; 5.578 ; 5.578 ; 5.578 ;
+; request[19] ; HEX6[0]     ; 5.370 ; 5.370 ; 5.370 ; 5.370 ;
+; request[19] ; HEX6[1]     ; 5.373 ; 5.373 ; 5.373 ; 5.373 ;
+; request[19] ; HEX6[2]     ; 5.375 ; 5.375 ; 5.375 ; 5.375 ;
+; request[19] ; HEX6[3]     ; 5.648 ; 5.648 ; 5.648 ; 5.648 ;
+; request[19] ; HEX6[4]     ;       ; 5.650 ; 5.650 ;       ;
+; request[19] ; HEX6[5]     ; 5.638 ; 5.638 ; 5.638 ; 5.638 ;
+; request[19] ; HEX6[6]     ; 5.630 ; 5.630 ; 5.630 ; 5.630 ;
+; request[20] ; HEX7[0]     ; 5.422 ;       ;       ; 5.422 ;
+; request[20] ; HEX7[2]     ;       ; 5.369 ; 5.369 ;       ;
+; request[20] ; HEX7[3]     ; 5.392 ;       ;       ; 5.392 ;
+; request[20] ; HEX7[4]     ; 5.061 ;       ;       ; 5.061 ;
+; request[20] ; HEX7[5]     ; 5.471 ;       ;       ; 5.471 ;
+; request[21] ; HEX7[0]     ;       ; 5.343 ; 5.343 ;       ;
+; request[21] ; HEX7[2]     ; 5.319 ;       ;       ; 5.319 ;
+; request[21] ; HEX7[3]     ;       ; 5.313 ; 5.313 ;       ;
+; request[21] ; HEX7[5]     ; 5.420 ;       ;       ; 5.420 ;
+; request[21] ; HEX7[6]     ;       ; 5.213 ; 5.213 ;       ;
 +-------------+-------------+-------+-------+-------+-------+
 
 
@@ -924,7 +968,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clock      ; clock    ; 34       ; 0        ; 0        ; 0        ;
+; clock      ; clock    ; 42       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -934,7 +978,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clock      ; clock    ; 34       ; 0        ; 0        ; 0        ;
+; clock      ; clock    ; 42       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -959,9 +1003,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 73    ; 73   ;
-; Unconstrained Output Ports      ; 29    ; 29   ;
-; Unconstrained Output Port Paths ; 70    ; 70   ;
+; Unconstrained Input Port Paths  ; 86    ; 86   ;
+; Unconstrained Output Ports      ; 31    ; 31   ;
+; Unconstrained Output Port Paths ; 72    ; 72   ;
 +---------------------------------+-------+------+
 
 
@@ -971,7 +1015,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 19 15:24:13 2019
+    Info: Processing started: Fri Nov 22 17:28:26 2019
 Info: Command: quartus_sta SnoopingMSI -c SnoopingMSI
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -984,10 +1028,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.187
+Info (332146): Worst-case setup slack is -1.453
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.187        -5.155 clock 
+    Info (332119):    -1.453        -7.587 clock 
 Info (332146): Worst-case hold slack is 0.391
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -997,14 +1041,14 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.222
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.222        -8.222 clock 
+    Info (332119):    -1.222       -10.222 clock 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.048
+Info (332146): Worst-case setup slack is -0.123
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.048        -0.096 clock 
+    Info (332119):    -0.123        -0.175 clock 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1014,13 +1058,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.222
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.222        -8.222 clock 
+    Info (332119):    -1.222       -10.222 clock 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4560 megabytes
-    Info: Processing ended: Tue Nov 19 15:24:15 2019
+    Info: Peak virtual memory: 4571 megabytes
+    Info: Processing ended: Fri Nov 22 17:28:28 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

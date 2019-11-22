@@ -51,11 +51,8 @@ set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VERILOG_FILE StateMachine.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE SnoopingMSI.v
-set_global_assignment -name VERILOG_FILE hexto7segment.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -201,7 +198,6 @@ set_location_assignment PIN_N9 -to HEX7[6]
 set_location_assignment PIN_N23 -to KEY[1]
 set_location_assignment PIN_P23 -to KEY[2]
 set_location_assignment PIN_W26 -to KEY[3]
-set_location_assignment PIN_AE23 -to LEDR[0]
 set_location_assignment PIN_AF23 -to LEDR[1]
 set_location_assignment PIN_AB21 -to LEDR[2]
 set_location_assignment PIN_AC22 -to LEDR[3]
@@ -216,9 +212,6 @@ set_location_assignment PIN_AC14 -to LEDR[11]
 set_location_assignment PIN_AD15 -to LEDR[12]
 set_location_assignment PIN_AE15 -to LEDR[13]
 set_location_assignment PIN_AF13 -to LEDR[14]
-set_location_assignment PIN_AE13 -to LEDR[15]
-set_location_assignment PIN_AE12 -to LEDR[16]
-set_location_assignment PIN_AD12 -to LEDR[17]
 set_location_assignment PIN_AE22 -to LEDG[0]
 set_location_assignment PIN_AF22 -to LEDG[1]
 set_location_assignment PIN_W19 -to LEDG[2]
@@ -226,7 +219,6 @@ set_location_assignment PIN_V18 -to LEDG[3]
 set_location_assignment PIN_U18 -to LEDG[4]
 set_location_assignment PIN_U17 -to LEDG[5]
 set_location_assignment PIN_AA20 -to LEDG[6]
-set_location_assignment PIN_Y18 -to LEDG[7]
 set_location_assignment PIN_Y12 -to LEDG[8]
 set_location_assignment PIN_D13 -to CLOCK_27
 set_location_assignment PIN_N2 -to CLOCK_50
@@ -486,4 +478,13 @@ set_location_assignment PIN_U4 -to request[19]
 set_location_assignment PIN_V1 -to request[20]
 set_location_assignment PIN_V2 -to request[21]
 set_location_assignment PIN_G26 -to clock
+set_global_assignment -name VERILOG_FILE StateMachineDir.v
+set_global_assignment -name VERILOG_FILE StateMachine.v
+set_global_assignment -name VERILOG_FILE SnoopingMSI.v
+set_global_assignment -name VERILOG_FILE hexto7segment.v
+set_location_assignment PIN_AE23 -to abortMem
+set_location_assignment PIN_AE12 -to reset
+set_location_assignment PIN_AD12 -to soma
+set_location_assignment PIN_Y18 -to dataWB
+set_location_assignment PIN_AE13 -to clear
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

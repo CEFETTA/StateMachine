@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("C:/Users/Aluno/Desktop/StateMachine/output_files/") File("SnoopingMSI.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("C:/Users/Aluno/Desktop/StateMachine/MSI/output_files/") File("SnoopingMSI.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

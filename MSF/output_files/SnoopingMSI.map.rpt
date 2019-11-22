@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SnoopingMSI
-Tue Nov 19 15:24:02 2019
+Fri Nov 22 17:24:01 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,12 +15,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Port Connectivity Checks: "hexto7segment:display7"
- 11. Port Connectivity Checks: "hexto7segment:display5"
- 12. Port Connectivity Checks: "hexto7segment:display0"
- 13. Port Connectivity Checks: "StateMachine:controlador"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "hexto7segment:display7"
+ 12. Port Connectivity Checks: "hexto7segment:display5"
+ 13. Port Connectivity Checks: "hexto7segment:display2"
+ 14. Port Connectivity Checks: "hexto7segment:display0"
+ 15. Port Connectivity Checks: "StateMachineDir:comb_3"
+ 16. Port Connectivity Checks: "StateMachine:controlador"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +49,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 19 15:24:02 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 22 17:24:01 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; SnoopingMSI                                     ;
 ; Top-level Entity Name              ; SnoopingMSI                                     ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 45                                              ;
-;     Total combinational functions  ; 43                                              ;
-;     Dedicated logic registers      ; 7                                               ;
-; Total registers                    ; 7                                               ;
-; Total pins                         ; 80                                              ;
+; Total logic elements               ; 82                                              ;
+;     Total combinational functions  ; 78                                              ;
+;     Dedicated logic registers      ; 17                                              ;
+; Total registers                    ; 17                                              ;
+; Total pins                         ; 85                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -159,45 +162,46 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; StateMachine.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/StateMachine.v  ;         ;
-; SnoopingMSI.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/SnoopingMSI.v   ;         ;
-; hexto7segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/hexto7segment.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; StateMachineDir.v                ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSF/StateMachineDir.v ;         ;
+; StateMachine.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSF/StateMachine.v    ;         ;
+; SnoopingMSI.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSF/SnoopingMSI.v     ;         ;
+; hexto7segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSF/hexto7segment.v   ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 45       ;
-;                                             ;          ;
-; Total combinational functions               ; 43       ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 28       ;
-;     -- 3 input functions                    ; 7        ;
-;     -- <=2 input functions                  ; 8        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 43       ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 7        ;
-;     -- Dedicated logic registers            ; 7        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 80       ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-; Maximum fan-out node                        ; state[1] ;
-; Maximum fan-out                             ; 16       ;
-; Total fan-out                               ; 194      ;
-; Average fan-out                             ; 1.49     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 82          ;
+;                                             ;             ;
+; Total combinational functions               ; 78          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 45          ;
+;     -- 3 input functions                    ; 19          ;
+;     -- <=2 input functions                  ; 14          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 78          ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 17          ;
+;     -- Dedicated logic registers            ; 17          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 85          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; request[18] ;
+; Maximum fan-out                             ; 27          ;
+; Total fan-out                               ; 348         ;
+; Average fan-out                             ; 1.93        ;
++---------------------------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,9 +209,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
 ; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Library Name ;
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
-; |SnoopingMSI                  ; 43 (0)            ; 7 (2)        ; 0           ; 0            ; 0       ; 0         ; 80   ; 0            ; |SnoopingMSI                          ; work         ;
-;    |StateMachine:controlador| ; 23 (23)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|StateMachine:controlador ; work         ;
+; |SnoopingMSI                  ; 78 (0)            ; 17 (4)       ; 0           ; 0            ; 0       ; 0         ; 85   ; 0            ; |SnoopingMSI                          ; work         ;
+;    |StateMachine:controlador| ; 40 (40)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|StateMachine:controlador ; work         ;
+;    |StateMachineDir:comb_3|   ; 15 (15)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|StateMachineDir:comb_3   ; work         ;
 ;    |hexto7segment:display0|   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display0   ; work         ;
+;    |hexto7segment:display2|   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display2   ; work         ;
 ;    |hexto7segment:display4|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display4   ; work         ;
 ;    |hexto7segment:display6|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display6   ; work         ;
 ;    |hexto7segment:display7|   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display7   ; work         ;
@@ -220,8 +226,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+-----------------------------------------------+
 ; Register name                         ; Reason for Removal                            ;
 +---------------------------------------+-----------------------------------------------+
+; StateMachineDir:comb_3|emit[17]       ; Merged with StateMachineDir:comb_3|emit[16]   ;
 ; StateMachine:controlador|emit[19..21] ; Merged with StateMachine:controlador|emit[17] ;
-; Total Number of Removed Registers = 3 ;                                               ;
+; StateMachineDir:comb_3|emit[18]       ; Stuck at VCC due to stuck port data_in        ;
+; StateMachineDir:comb_3|emit[19]       ; Stuck at GND due to stuck port data_in        ;
+; Total Number of Removed Registers = 6 ;                                               ;
 +---------------------------------------+-----------------------------------------------+
 
 
@@ -230,14 +239,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 7     ;
+; Total registers                              ; 17    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Clock Enable       ; 4     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |SnoopingMSI|StateMachineDir:comb_3|emit[16]    ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; Yes        ; |SnoopingMSI|StateMachineDir:comb_3|newState[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +----------------------------------------------------+
@@ -259,12 +278,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------+
+; Port Connectivity Checks: "hexto7segment:display2" ;
++---------+-------+----------+-----------------------+
+; Port    ; Type  ; Severity ; Details               ;
++---------+-------+----------+-----------------------+
+; x[3..2] ; Input ; Info     ; Stuck at GND          ;
++---------+-------+----------+-----------------------+
+
+
++----------------------------------------------------+
 ; Port Connectivity Checks: "hexto7segment:display0" ;
 +---------+-------+----------+-----------------------+
 ; Port    ; Type  ; Severity ; Details               ;
 +---------+-------+----------+-----------------------+
 ; x[3..2] ; Input ; Info     ; Stuck at GND          ;
 +---------+-------+----------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "StateMachineDir:comb_3"                                                                     ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; emit[21..20] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; emit[15..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -281,7 +319,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -291,18 +329,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 19 15:24:00 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SnoopingMSI -c SnoopingMSI
+    Info: Processing started: Fri Nov 22 17:23:51 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SnoopingMSF -c SnoopingMSI
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file statemachinedir.v
+    Info (12023): Found entity 1: StateMachineDir
 Info (12021): Found 1 design units, including 1 entities, in source file statemachine.v
     Info (12023): Found entity 1: StateMachine
 Info (12021): Found 1 design units, including 1 entities, in source file snoopingmsi.v
     Info (12023): Found entity 1: SnoopingMSI
 Info (12021): Found 1 design units, including 1 entities, in source file hexto7segment.v
     Info (12023): Found entity 1: hexto7segment
+Critical Warning (10846): Verilog HDL Instantiation warning at SnoopingMSI.v(13): instance has no name
 Info (12127): Elaborating entity "SnoopingMSI" for the top level hierarchy
 Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:controlador"
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(24): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(30): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "StateMachineDir" for hierarchy "StateMachineDir:comb_3"
 Info (12128): Elaborating entity "hexto7segment" for hierarchy "hexto7segment:display0"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[1]" is stuck at GND
@@ -313,20 +355,11 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[4]" is stuck at VCC
     Warning (13410): Pin "HEX1[5]" is stuck at VCC
     Warning (13410): Pin "HEX1[6]" is stuck at VCC
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
     Warning (13410): Pin "HEX3[3]" is stuck at VCC
     Warning (13410): Pin "HEX3[4]" is stuck at VCC
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
     Warning (13410): Pin "HEX5[0]" is stuck at GND
     Warning (13410): Pin "HEX5[1]" is stuck at GND
     Warning (13410): Pin "HEX5[2]" is stuck at GND
@@ -351,14 +384,14 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "request[13]"
     Warning (15610): No output dependent on input pin "request[14]"
     Warning (15610): No output dependent on input pin "request[15]"
-Info (21057): Implemented 125 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 167 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 24 input pins
-    Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 45 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info (21059): Implemented 61 output pins
+    Info (21061): Implemented 82 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 38 warnings
     Info: Peak virtual memory: 4623 megabytes
-    Info: Processing ended: Tue Nov 19 15:24:02 2019
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Fri Nov 22 17:24:01 2019
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:02
 
 

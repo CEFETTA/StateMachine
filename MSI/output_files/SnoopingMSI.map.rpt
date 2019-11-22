@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SnoopingMSI
-Tue Nov 19 15:24:02 2019
+Fri Nov 22 17:28:15 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -46,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 19 15:24:02 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 22 17:28:15 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; SnoopingMSI                                     ;
 ; Top-level Entity Name              ; SnoopingMSI                                     ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 45                                              ;
-;     Total combinational functions  ; 43                                              ;
-;     Dedicated logic registers      ; 7                                               ;
-; Total registers                    ; 7                                               ;
-; Total pins                         ; 80                                              ;
+; Total logic elements               ; 56                                              ;
+;     Total combinational functions  ; 54                                              ;
+;     Dedicated logic registers      ; 9                                               ;
+; Total registers                    ; 9                                               ;
+; Total pins                         ; 82                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -159,45 +159,45 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; StateMachine.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/StateMachine.v  ;         ;
-; SnoopingMSI.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/SnoopingMSI.v   ;         ;
-; hexto7segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/hexto7segment.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; StateMachine.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSI/StateMachine.v  ;         ;
+; SnoopingMSI.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSI/SnoopingMSI.v   ;         ;
+; hexto7segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/StateMachine/MSI/hexto7segment.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 45       ;
-;                                             ;          ;
-; Total combinational functions               ; 43       ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 28       ;
-;     -- 3 input functions                    ; 7        ;
-;     -- <=2 input functions                  ; 8        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 43       ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 7        ;
-;     -- Dedicated logic registers            ; 7        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 80       ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-; Maximum fan-out node                        ; state[1] ;
-; Maximum fan-out                             ; 16       ;
-; Total fan-out                               ; 194      ;
-; Average fan-out                             ; 1.49     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 56          ;
+;                                             ;             ;
+; Total combinational functions               ; 54          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 33          ;
+;     -- 3 input functions                    ; 10          ;
+;     -- <=2 input functions                  ; 11          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 54          ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 9           ;
+;     -- Dedicated logic registers            ; 9           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 82          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; request[16] ;
+; Maximum fan-out                             ; 19          ;
+; Total fan-out                               ; 237         ;
+; Average fan-out                             ; 1.63        ;
++---------------------------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,8 +205,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
 ; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Library Name ;
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
-; |SnoopingMSI                  ; 43 (0)            ; 7 (2)        ; 0           ; 0            ; 0       ; 0         ; 80   ; 0            ; |SnoopingMSI                          ; work         ;
-;    |StateMachine:controlador| ; 23 (23)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|StateMachine:controlador ; work         ;
+; |SnoopingMSI                  ; 54 (0)            ; 9 (2)        ; 0           ; 0            ; 0       ; 0         ; 82   ; 0            ; |SnoopingMSI                          ; work         ;
+;    |StateMachine:controlador| ; 34 (34)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|StateMachine:controlador ; work         ;
 ;    |hexto7segment:display0|   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display0   ; work         ;
 ;    |hexto7segment:display4|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display4   ; work         ;
 ;    |hexto7segment:display6|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SnoopingMSI|hexto7segment:display6   ; work         ;
@@ -230,9 +230,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 7     ;
+; Total registers                              ; 9     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 2     ;
@@ -291,7 +291,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 19 15:24:00 2019
+    Info: Processing started: Fri Nov 22 17:28:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SnoopingMSI -c SnoopingMSI
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file statemachine.v
@@ -302,7 +302,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file hexto7s
     Info (12023): Found entity 1: hexto7segment
 Info (12127): Elaborating entity "SnoopingMSI" for the top level hierarchy
 Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:controlador"
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(24): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(30): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "hexto7segment" for hierarchy "hexto7segment:display0"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[1]" is stuck at GND
@@ -351,14 +351,14 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "request[13]"
     Warning (15610): No output dependent on input pin "request[14]"
     Warning (15610): No output dependent on input pin "request[15]"
-Info (21057): Implemented 125 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 138 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 24 input pins
-    Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 45 logic cells
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 56 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 46 warnings
     Info: Peak virtual memory: 4623 megabytes
-    Info: Processing ended: Tue Nov 19 15:24:02 2019
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Fri Nov 22 17:28:15 2019
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
